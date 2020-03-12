@@ -1,3 +1,27 @@
 .advantages {
-    background: tomato;
+    padding-top: 50px;
+    text-transform: uppercase;
+}
+
+.advantages__description {
+    position: relative;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+}
+
+.advantages__heading {
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
 } 
+
+.advantages__paragraph {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 26px;
+    text-align: center;
+    color: #333;
+}
+

@@ -1,0 +1,177 @@
+.reasons {
+    @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+// Все карточки секции
+.reasons__card {
+    position: relative;
+    padding-top: 35px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 30px;
+    text-align: center;
+
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 256px;
+        max-width: 33.33%;
+        padding: 50px;
+    }
+
+    // Белый треугольник сверху первого синего блока
+    &:first-child {
+        &::before {
+            display: block;
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            content: "";
+            width: 100%;
+            height: 37px;
+            background: url("../../img/advantages-triangle.svg") 50% 50% no-repeat;
+            background-size: cover;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            -moz-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            -o-transform: translateX(-50%);
+
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+}
+
+// Синие карточки
+.reasons__card--blue {
+    background-color: $main-color;
+    color: #fff;
+    flex-grow: 1;
+
+    &:first-child {
+        margin-right: auto;
+    }
+
+}
+
+// Серые карточки
+.reasons__card--gray {
+    background-color: #eeeeee;
+
+    // Полосы между карточками
+    &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 85%;
+        height: 1px;
+        background-color: #d6d6d6;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        
+        @include tablet {
+            display: none;
+        }
+    }
+
+    // Чтобы второй синий блок не перестроился дальше серых
+    @include tablet {
+        order: 3;
+    }
+}
+
+// Карточка с фотографией
+.reasons__card--double {
+    line-height: 0;
+    padding: 0;
+    min-height: 256px;
+
+    @include tablet {
+        max-width: 66.66%;
+    }
+}
+
+// Фотография
+.reasons__image {
+
+}
+
+// Перестройка второй синей карточки влево
+.reasons__card--right {
+    order: 2;
+
+    // Отталкиваем изображение влево
+    @include tablet {
+        margin-left: auto;
+    }
+}
+
+.reasons__heading {
+    margin: 0;
+    font-size: 18px;
+    line-height: 26px;
+
+    @include tablet {
+        font-size: 21px;
+    }
+} 
+
+.reasons__paragraph {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+// Порядковый номер преимущества
+.reasons__index {
+    display: block;
+    margin: 10px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 26px;
+    text-align: center;
+}
+
+// Карточки с иконками
+.reasons__card:nth-child(3),
+.reasons__card:nth-child(4),
+.reasons__card:nth-child(5) {
+    text-align: left;
+    padding-left: 70px;
+
+    @include tablet {
+        text-align: center;
+        padding-left: 50px;
+    }
+}
+
+// Иконки
+.reasons__icon {
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 27px;
+
+    @include tablet {
+        position: relative;
+        left: 50%;
+        top: -20px;
+        width: 72px;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+    }
+}
