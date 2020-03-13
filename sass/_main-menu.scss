@@ -12,7 +12,7 @@
 
     @include tablet {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
     }
 }
 
@@ -75,6 +75,13 @@
         -ms-transform: translateX(-50%);
         -o-transform: translateX(-50%);
         box-shadow: none;  
+    }
+}
+
+.main-menu__link--logo img {
+    @include desktop {
+        width: 188px;
+        height: 96px;
     }
 }
 

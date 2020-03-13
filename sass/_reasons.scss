@@ -18,13 +18,14 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        min-height: 256px;
+        height: 256px;
         max-width: 33.33%;
         padding: 50px;
     }
 
     // Белый треугольник сверху первого синего блока
     &:first-child {
+        padding-top: 35px + 37px;
         &::before {
             display: block;
             position: absolute;
@@ -53,6 +54,10 @@
     background-color: $main-color;
     color: #fff;
     flex-grow: 1;
+
+    @media (min-width: $tablet-width-content) and (max-width: $desktop-width - 1) {
+        max-width: calc(100% - 512px);
+    }
 
     &:first-child {
         margin-right: auto;
@@ -103,7 +108,9 @@
 
 // Фотография
 .reasons__image {
-
+    display: block;
+    margin: 0 auto;
+    // max-height: 256px;
 }
 
 // Перестройка второй синей карточки влево

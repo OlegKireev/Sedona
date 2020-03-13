@@ -21,7 +21,12 @@
                         <li class="main-menu__item"><a class="main-menu__link" href="#">Форма отзыва</a></li>
                         <li class="main-menu__item"><a class="main-menu__link" href="#">HTML Academy</a></li>
                     </ul>
-                    <a class="main-menu__link main-menu__link--logo" href="#"><img src="img/logo-mobile.svg" height="102" width="83" alt="На главную"></a>
+                    <a class="main-menu__link main-menu__link--logo" href="#">
+                        <picture>
+                            <source media="(min-width: 1200px)" srcset="img/logo-desktop.svg">
+                                <img src="img/logo-mobile.svg" height="102" width="83" alt="На главную">
+                        </picture>
+                    </a>
                     <button class="btn main-menu__btn main-menu__btn--open"></button>
                 </nav>
             </section>
@@ -57,7 +62,11 @@
                     </div>
 
                     <div class="reasons__card reasons__card--double">
-                        <img class="reasons__image" src="img/photo-city@1x.jpg" width="520" height="260" alt="Жилье в Седоне">
+                        <picture>
+                            <source media="(min-width: 1200px)" srcset="img/photo-city-desktop@1x.jpg 1x, img/photo-city-desktop@2x.jpg 2x">
+                            <source media="(min-width: 421px)" srcset="img/photo-city-tablet@1x.jpg 1x, img/photo-city-tablet@2x.jpg 2x">
+                            <img class="reasons__image" src="img/photo-city-mobile@1x.jpg" srcset="img/photo-city-mobile@2x.jpg 2x" alt="Жилье в Седоне">
+                        </picture>
                     </div>
 
                     <div class="reasons__card reasons__card--white">
@@ -101,7 +110,11 @@
                     </div>
 
                     <div class="reasons__card reasons__card--double">
-                        <img class="reasons__image" src="img/photo-bridge@1x.jpg" width="520" height="260" alt="Прекрасные виды Седоны">
+                        <picture>
+                            <source media="(min-width: 1200px)" srcset="img/photo-bridge-desktop@1x.jpg 1x, img/photo-bridge-desktop@2x.jpg 2x">
+                            <source media="(min-width: 321px)" srcset="img/photo-bridge-tablet@1x.jpg 1x, img/photo-bridge-tablet@2x.jpg 2x">
+                            <img class="reasons__image" src="img/photo-bridge-mobile@1x.jpg" srcset="img/photo-bridge-mobile@2x.jpg 2x" alt="Пейзажи Седоны">
+                        </picture>
                     </div>
 
                     <div class="reasons__card reasons__card--gray">
