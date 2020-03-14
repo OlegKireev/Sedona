@@ -1,0 +1,28 @@
+.socials {
+    display: flex;
+}
+
+.socials__link {
+    display: block;
+    width: 48px;
+    height: 48px;
+    background-color: $main-color;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+    &:not(:last-child) {
+        margin-right: 6px;
+    }
+}
+
+.socials__link--tw {
+    background-image: url("../img/icon-twitter.svg");
+}
+
+.socials__link--fb {
+    background-image: url("../img/icon-fb.svg");
+}
+
+.socials__link--yt {
+    background-image: url("../img/icon-youtube.svg");
+}

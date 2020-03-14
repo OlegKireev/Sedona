@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dist/css/main.min.css">
+    <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
     <title>Sedona</title>
 </head>
@@ -153,14 +153,15 @@
             <section class="intrested">
                 <h2 class="intrested__heading">Заинтересовались?</h2>
                 <p class="intrested__paragraph">
-                    Укажите предполагаемые даты поездки,<br>
+                    Укажите предполагаемые даты поездки, <br>
                     и мы покажем вам лучшие предложения гостиниц в Седоне
                 </p>
-                <a class="btn intrested__btn" href="#">Найти гостиницу</a>
+                <a class="btn btn__blue intrested__btn" href="#">Найти гостиницу</a>
             </section>
 
-            <section class="map">
-                <img class="map__image" src="https://via.placeholder.com/320x350" height="320" width="350" alt="Мы расположены здесь">
+            <section class="map" id="map">
+                <!-- <img class="map__image" src="https://via.placeholder.com/320x350" height="320" width="350" alt="Мы расположены здесь"> -->
+                
             </section>
             
         </main>
@@ -176,11 +177,13 @@
             </div>
             <div class="page-footer__developer">
                 <span>Разработано</span>
-                <img class="page-footer__image" src="https://via.placeholder.com/27x24" height="27" width="24" alt="HTML-Academy">
+                <img class="page-footer__image" src="img/icon-htmlacademy.svg" width="27" height="24" alt="HTML-Academy">
             </div>
         </footer>
 
     </div>
 
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=067ef420-7a25-481f-8881-77f62cba9613&lang=ru_RU" type="text/javascript"></script>
+    <script src="js/yandexMap.js"></script>
 </body>
 </html>
