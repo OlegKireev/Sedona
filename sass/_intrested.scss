@@ -1,9 +1,18 @@
 .intrested {
     max-width: 500px;
     margin: 0 auto;
-    padding: 20px 20px 50px;
+    padding: 25px 20px 50px;
     text-align: center;
     text-transform: uppercase;
+
+    @include tablet {
+        padding-top: 55px;
+        padding-bottom: 60px;
+    }
+
+    @include desktop {
+        padding-bottom: 70px;
+    }
 }
 
 .intrested__paragraph br {
@@ -15,11 +24,15 @@
 }
 
 .intrested__heading {
-    font-size: 18px;
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 21px;
     line-height: 26px;
+    font-weight: bold;
 
     @include tablet {
         font-size: 30px;
+        margin-bottom: 30px;
     }
 }
 
@@ -27,6 +40,15 @@
     font-size: 14px;
     line-height: 24px;
     color: #333;
+    margin-bottom: 35px;
+
+    @include tablet {
+        margin-bottom: 40px;
+    }
+
+    @include desktop {
+        margin-bottom: 45px;
+    }
 }
 
 .intrested__btn {

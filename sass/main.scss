@@ -2,11 +2,28 @@ body {
     font-family: 'PT Sans', 'Open Sans', sans-serif;
 }
 
+@keyframes bounce {
+    0% {
+        transform: translateY(-2000px);
+    }
 
+    // 70% {
+    //     transform: translateY(30px);
+    // }
+
+    90% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
 
 @import "_normalize.scss";
 @import "_variables.scss";
 @import "_mixins.scss";
+@import "_btn.scss";
 @import "_page-header.scss";
 @import "_main-menu.scss";
 @import "_page-main.scss";
@@ -17,7 +34,6 @@ body {
 @import "_map.scss";
 @import "_page-footer.scss";
 @import "_socials";
-@import "_btn.scss";
 
 .page-body {
     background-color: #f2f2f2;

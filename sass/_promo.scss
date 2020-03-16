@@ -3,11 +3,16 @@
     display: flex;
     min-height: 389px;
     width: 100%;
-    // background-color: green;
-    background-image: url("../../img/back-mobile.jpg");
+    padding-top: 5px;
+    background-image: url("../img/back-mobile.jpg");
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @include tablet {
+        min-height: 518px;
+        background-image: url("../img/back-desktop.jpg@1x.jpg");
+    }
 
     &::after {
         display: block;

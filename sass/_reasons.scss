@@ -8,10 +8,7 @@
 // Все карточки секции
 .reasons__card {
     position: relative;
-    padding-top: 35px;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-bottom: 30px;
+    padding: 40px 25px;
     text-align: center;
 
     @include tablet {
@@ -20,12 +17,18 @@
         justify-content: center;
         height: 256px;
         max-width: 33.33%;
-        padding: 50px;
+        padding: 40px;
     }
 
-    // Белый треугольник сверху первого синего блока
+    // Первый синий блок
     &:first-child {
-        padding-top: 35px + 37px;
+        padding-top: 40px + 37px;
+
+        @include tablet {
+            padding-top: 40px;
+        }
+
+        // Белый треугольник сверху первого синего блока
         &::before {
             display: block;
             position: absolute;
@@ -54,20 +57,37 @@
     background-color: $main-color;
     color: #fff;
     flex-grow: 1;
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
 
     @media (min-width: $tablet-width-content) and (max-width: $desktop-width - 1) {
         max-width: calc(100% - 512px);
     }
 
+    & .reasons__heading {
+        @include desktop {
+            max-width: 200px;
+            margin: 0 auto;
+        }
+    }
+
     &:first-child {
         margin-right: auto;
     }
-
 }
+
+@media (max-width: $tablet-width - 1) {
+    .reasons__card--blue br {
+        display: none;
+    }
+} 
 
 // Серые карточки
 .reasons__card--gray {
     background-color: #eeeeee;
+    padding-top: 29px;
+    padding-bottom: 29px;
 
     // Полосы между карточками
     &:not(:last-child)::after {
@@ -92,6 +112,17 @@
     // Чтобы второй синий блок не перестроился дальше серых
     @include tablet {
         order: 3;
+    }
+
+    @include desktop {
+        padding-top: 10px;
+    }
+}
+
+.reasons__card--gray .reasons__heading {
+    @include tablet {
+        max-width: 150px;
+        margin: 0 auto;
     }
 }
 
@@ -142,23 +173,49 @@
 // Порядковый номер преимущества
 .reasons__index {
     display: block;
-    margin: 10px;
+    margin: 5px 0 12px;
     padding: 0;
     font-size: 14px;
     line-height: 26px;
     text-align: center;
+
+    @include tablet {
+        margin-bottom: 20px;
+    }
 }
 
 // Карточки с иконками
-.reasons__card:nth-child(3),
-.reasons__card:nth-child(4),
-.reasons__card:nth-child(5) {
+.reasons__card--white {
     text-align: left;
     padding-left: 70px;
+    padding-bottom: 0;
 
     @include tablet {
         text-align: center;
         padding-left: 50px;
+        min-height: 330px;
+    }
+}
+
+.reasons__card--white .reasons__heading {
+    @include tablet {
+        margin-bottom: 20px;
+    }
+}
+// Стилизация для мобильного разрешения
+@media (max-width: $tablet-width - 1) {
+    .reasons .reasons__card--white:nth-child(4) {
+        padding-top: 30px;
+    }
+
+    .reasons .reasons__card--white:nth-child(5) {
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
+
+    .reasons__card--white .reasons__heading {
+        line-height: 18px;
+        margin-bottom: 18px;
     }
 }
 
@@ -172,8 +229,9 @@
     @include tablet {
         position: relative;
         left: 50%;
-        top: -20px;
+        top: -60px;
         width: 72px;
+        margin-bottom: -20px;
         transform: translateX(-50%);
         -webkit-transform: translateX(-50%);
         -moz-transform: translateX(-50%);

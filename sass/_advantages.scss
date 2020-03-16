@@ -1,5 +1,5 @@
 .advantages {
-    padding-top: 50px;
+    padding-top: 25px;
     text-transform: uppercase;
 }
 
@@ -7,14 +7,26 @@
     position: relative;
     padding-left: 25px;
     padding-right: 25px;
-    padding-bottom: 25px;
+    padding-bottom: 5px;
+
+    @include tablet {
+        padding-top: 25px;
+        padding-bottom: 50px;
+    }
 }
 
 .advantages__heading {
+    margin-bottom: 30px;
     font-size: 18px;
     line-height: 26px;
     text-align: center;
-} 
+
+    @include tablet {
+        margin: 0 auto 30px;
+        font-size: 21px;
+        max-width: 500px;
+    }
+}
 
 .advantages__paragraph {
     padding: 0;
