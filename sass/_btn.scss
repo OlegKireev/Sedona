@@ -3,11 +3,24 @@
     cursor: pointer;
 }
 
-.btn__blue {
+.btn--blue {
     display: block;
     padding: 17px;
     font-size: 21px;
     font-weight: bold;
     color: #fff;
     background-color: $main-color;
+    text-transform: uppercase;
+
+    &:hover, &:focus {
+        background-color: #669ec0;
+    }
+
+    &:active {
+        color: rgba($color: #fff, $alpha: 0.3);
+    }
+
+    &:disabled {
+        background-color: #e5e5e5;
+    }
 }

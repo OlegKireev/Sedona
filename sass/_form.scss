@@ -1,0 +1,42 @@
+.form {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+}
+
+.form__heading {
+    margin: 0px;
+    margin-bottom: 25px;
+    width: 100%;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.form label {
+    font-size: 14px;
+    line-height: 26px;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.form input[type=text],
+.form input[type=phone],
+.form input[type=mail] {
+    padding: 20px;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: bold;
+    color: #000;
+    background-color: #f2f2f2;
+    border: none;
+}
+
+.form input::placeholder {
+    color: #000;
+}
+
+.form__submit {
+    width: 100%;
+}

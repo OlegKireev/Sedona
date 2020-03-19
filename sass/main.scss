@@ -35,6 +35,17 @@ body {
 @import "_page-footer.scss";
 @import "_socials";
 
+@import "_review.scss";
+@import "_form.scss";
+@import "_name.scss";
+@import "_contacts.scss";
+@import "_radio.scss";
+@import "_impression.scss";
+@import "_checkbox.scss";
+@import "_showplaces.scss";
+@import "_emotions.scss";
+
+
 .page-body {
     background-color: #f2f2f2;
 }

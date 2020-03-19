@@ -1,0 +1,65 @@
+// Скрываем стандартные чекбоксы
+.radio__input {
+    @include visually-hidden;
+}
+
+// Лейбл радиобаттона
+.radio {
+    position: relative;
+    display: block;
+    margin-left: 80px;
+    margin-top: 50px;
+    font-weight: bold;
+    text-transform: none;
+    font-size: 18px;
+    line-height: 26px;
+
+    
+    // Радиобаттон
+    &::before {
+        content: "";
+        position: absolute;
+        left: -75px;
+        top: 50%;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #f2f2f2;
+        transform: translateY(-50%);
+    }
+}
+
+// Выбранный радиобаттон
+.radio__input:checked + .radio::after {
+    content: "";
+    position: absolute;
+    // V V Изменить при перемещении радиобаттона
+    left: -61px; 
+    top: 50%;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #333;
+    transform: translateY(-50%);
+}
+
+// Наведение и фокус
+.radio__input:hover:not(:disabled) + .radio::before,
+.radio__input:focus:not(:disabled) + .radio::before {
+    background-color: #e5e5e5;
+}
+
+// Клик
+.radio__input:active:not(:disabled) + .radio::before {
+    background-color: #d5d5d5;
+}
+
+.radio__input:active:not(:disabled) + .radio::after {
+    background-color: #a4a4a4;
+}
+
+// Отключенный радиобаттон
+.radio__input:disabled + .radio::before,
+.radio__input:disabled + .radio::after {
+    opacity: 0.3;
+}

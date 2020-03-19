@@ -1,0 +1,53 @@
+// Отключаем стандартные чекбоксы
+.checkbox__input {
+    @include visually-hidden;
+}
+
+// Лейбл чекбокса
+.checkbox {
+    position: relative;
+    display: block;
+    margin-left: 80px;
+    margin-top: 50px;
+    font-weight: bold;
+    text-transform: none;
+    font-size: 18px;
+    line-height: 26px;
+
+    // Чекбокс
+    &::before {
+        content: "";
+        position: absolute;
+        left: -75px;
+        top: 50%;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        transform: translateY(-50%);
+    }
+}
+
+// Выбранный чекбокс
+.checkbox__input:checked + .checkbox::before {
+    background-image: url('../img/tick.svg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+// Ховер и фокус
+.checkbox__input:hover:not(:disabled) + .checkbox::before,
+.checkbox__input:focus:not(:disabled) + .checkbox::before {
+    background-color: #e5e5e5;
+}   
+
+// Клик
+.checkbox__input:active:not(:disabled) + .checkbox::before {
+    background-color: #d5d5d5;
+}
+
+// Отключенный чекбокс
+.checkbox__input:disabled + .checkbox::before {
+    opacity: 0.3;
+}

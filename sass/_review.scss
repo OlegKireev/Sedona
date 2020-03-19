@@ -1,0 +1,40 @@
+.review {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.review__description {
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+
+    @include tablet {
+        padding-top: 25px;
+        padding-bottom: 50px;
+    }
+}
+
+.review__heading {
+    margin-bottom: 30px;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+
+    @include tablet {
+        margin: 0 auto 30px;
+        font-size: 21px;
+        max-width: 500px;
+    }
+}
+
+.review__paragraph {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 26px;
+    text-align: center;
+    color: #333;
+}
+

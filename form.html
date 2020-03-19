@@ -14,14 +14,14 @@
                 <nav>
                     <ul class="main-menu__list">
                         <li class="main-menu__item">
-                            <a class="main-menu__link main-menu__link--active">Главная</a>
+                            <a class="main-menu__link" href="index.html">Главная</a>
                             <button class="btn main-menu__btn main-menu__btn--close"></button>
                         </li>
                         <li class="main-menu__item"><a class="main-menu__link" href="#">Фото и видео</a></li>
-                        <li class="main-menu__item"><a class="main-menu__link" href="form.html">Форма отзыва</a></li>
+                        <li class="main-menu__item"><a class="main-menu__link main-menu__link--active">Форма отзыва</a></li>
                         <li class="main-menu__item"><a class="main-menu__link" href="#">HTML Academy</a></li>
                     </ul>
-                    <a class="main-menu__link main-menu__link--logo">
+                    <a class="main-menu__link main-menu__link--logo" href="index.html">
                         <picture>
                             <source media="(min-width: 1200px)" srcset="img/logo-desktop.svg">
                             <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
@@ -35,20 +35,92 @@
 
         <main class="page-main">
 
-            <section class="promo">
-                <h1 class="visually-hidden">СЕДОНА — небольшой городок в Аризоне, заслуживающий большего!</h1>
-                <img class="promo__slogan" src="img/slogan.svg" width="282" height="214" alt="Добро пожаловать в Седону">
+            <section class="promo promo--incidental">
+                <h1 class="visually-hidden">Седона</h1>
+                <img class="promo__slogan" src="img/text-sedona.svg" width="229" height="39" alt="Добро пожаловать в Седону">
             </section>
 
-            <section class="advantages">
-                <div class="advantages__description">
-                    <h2 class="advantages__heading">
-                        СЕДОНА — небольшой городок в Аризоне, заслуживающий большего!
+            <section class="review">
+                <div class="review__description">
+                    <h2 class="review__heading">
+                        Оставьте свой отзыв
                     </h2>
-                    <p class="advantages__paragraph">
-                        Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!
+                    <p class="review__paragraph">
+                        Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях
                     </p>
                 </div>
+            </section>
+
+            <section class="form">
+
+                <form action="https://echo.htmlacademy.ru" method="post">
+
+                <section class="form__name name">
+                    <h2 class="form__heading">Представьтесь:</h2>
+                    <div class="name__row">
+                        <div class="name__column">
+                            <label for="first-name-field">Имя*:</label>
+                        </div>
+                        <div class="name__column">
+                            <input type="text" name="first-name" id="first-name-field" placeholder="Петр">
+                        </div>
+                    </div>
+                    <div class="name__row">
+                        <div class="name__column">
+                            <label for="second-name-field">Фамилия*:</label>
+                        </div>
+                        <div class="name__column">
+                            <input type="text" name="second-name" id="second-name-field" placeholder="Иванов">
+                        </div>
+                    </div>
+                    <div class="name__row">
+                        <div class="name__column">
+                            <label for="middle-name-field">Отчество:</label>
+                        </div>
+                        <div class="name__column">
+                            <input type="text" name="middle-name" id="middle-name-field" placeholder="Александрович">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="form__contacts contacts">
+                    <h2 class="form__heading">Контактная информация:</h2>
+                    <label for="phone-field">Контактный телефон*:</label>
+                    <input type="phone" name="phone" id="phone-field" placeholder="Введите телефон">
+                    <label for="mail-field">Электронная почта*:</label>
+                    <input type="mail" name="mail" id="mail-field" placeholder="Введите e-mail">
+                </section>
+
+                <section class="form__impression impression">
+                    <h2 class="form__heading">Ваше общее впечатление:</h2>
+                    <input class="radio__input" type="radio" name="impression" id="impression-positive-field" value="positive" checked>
+                    <label class="radio" for="impression-positive-field">Скорее положительное</label>
+                    <input class="radio__input" type="radio" name="impression" id="impression-negative-field" value="negative">
+                    <label class="radio" for="impression-negative-field">Скорее отрицательное</label>
+                    <input class="radio__input" type="radio" name="impression" id="impression-idk-field" value="idk">
+                    <label class="radio" for="impression-idk-field">Затрудняюсь ответить</label>
+                </section>
+
+                <section class="form__showplaces showplaces">
+                    <h2 class="form__heading">Посещенные достопримечательности:</h2>
+                    <input class="checkbox__input" type="checkbox" name="bridge-of-devil" id="showplaces-bridge-of-devil-field">
+                    <label class="checkbox" for="showplaces-bridge-of-devil-field">Мост Дьявола</label>
+                    <input class="checkbox__input" type="checkbox" name="bell-mountain" id="showplaces-bell-mountain-field">
+                    <label class="checkbox" for="showplaces-bell-mountain-field">Гора-Колокол</label>
+                    <input class="checkbox__input" type="checkbox" name="slide-park" id="showplaces-slide-park-field">
+                    <label class="checkbox" for="showplaces-slide-park-field">Слайд-парк</label>
+                    <input class="checkbox__input" type="checkbox" name="red-rocks" id="showplaces-red-rocks-field">
+                    <label class="checkbox" for="showplaces-red-rocks-field">Красные скалы</label>
+                </section>
+
+                <section class="form__emotions emotions">
+                    <h2 class="form__heading">Опишите свои эмоции:</h2>
+                    <textarea class="emotions__textarea" name="emotions" id="emotions-field" rows="5" placeholder="Опишите подробно все свои восторги"></textarea>
+                </section>
+                <button type="submit" class="form__submit btn btn--blue">Отправить отзыв</button>
+                </form>
+            </section>
+            <!-- <section class="advantages">
 
                 <div class="advantages__cards reasons">
 
@@ -149,7 +221,7 @@
                     </div>
 
                 </div>
-            </section>
+            </section> 
 
             <section class="intrested">
                 <h2 class="intrested__heading">Заинтересовались?</h2>
@@ -157,13 +229,12 @@
                     Укажите предполагаемые даты поездки, <br>
                     и мы покажем вам лучшие предложения гостиниц в Седоне
                 </p>
-                <a class="btn btn--blue intrested__btn" href="#">Найти гостиницу</a>
+                <a class="btn btn__blue intrested__btn" href="#">Найти гостиницу</a>
             </section>
 
             <section class="map" id="map">
-                <!-- <img class="map__image" src="https://via.placeholder.com/320x350" height="320" width="350" alt="Мы расположены здесь"> -->
                 
-            </section>
+            </section> -->
             
         </main>
 

@@ -38,11 +38,38 @@
     border-top: 1px solid #9ac2db;
     border-bottom: 1px solid #678fa8;
 
+    @media (max-width: $tablet-width) {
+        &:hover:not(&--logo), &:focus:not(&--logo) {
+            background-color: #669ec0;
+        }
+    }
+
+    &:active {
+        color: rgba($color: #fff, $alpha: 0.3);
+    }
+
+
        @include tablet {
         font-size: 14px;
         color: #000;
         background: #fff;
         border: none;
+
+        &:hover:not(&--active), &:focus:not(&--active) {
+            color: $main-color;
+        }
+
+        &--active {
+            color: #766357;
+        }
+
+        &:active {
+            color: #fff;
+        }
+
+        &:visited {
+            color: rgba($color: #000, $alpha: 0.3);
+        }
     }
 }
 
@@ -82,7 +109,7 @@
         -moz-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
         -o-transform: translateX(-50%);
-        box-shadow: none;  
+        box-shadow: none;
     }
 }
 
@@ -97,6 +124,8 @@
 
     @include tablet {
         position: relative;
+
+        
     }
 
     @include desktop {
@@ -126,7 +155,7 @@
     position: absolute;
     top: 50%;
     right: 20px;
-    background: $main-color;
+    background: rgba($color: #fff, $alpha: 0);
     
     &::before {
         content: "";
@@ -172,6 +201,12 @@
     right: 18px;
     background: rgba($color: #fff, $alpha: 0);
     
+    &:hover::before, &:focus::before {
+        background-color: #669ec0;
+        box-shadow: 0px 8px 0 0 #669ec0,
+                    0px -8px 0 0 #669ec0;
+    }
+
     &::before {
         content: "";
         position: absolute;
@@ -182,6 +217,7 @@
         background-color: $main-color;
         box-shadow: 0px 8px 0 0 $main-color,
                     0px -8px 0 0 $main-color;
+
     }
 
     @include tablet {
