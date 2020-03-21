@@ -1244,7 +1244,7 @@ a {
 
 .review {
   padding-top: 25px;
-  padding-bottom: 25px;
+  padding-bottom: 10px;
   text-transform: uppercase;
 }
 
@@ -1263,7 +1263,7 @@ a {
 }
 
 .review__heading {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   font-size: 18px;
   line-height: 26px;
   text-align: center;
@@ -1272,7 +1272,7 @@ a {
 @media (min-width: 768px) {
   .review__heading {
     margin: 0 auto 30px;
-    font-size: 21px;
+    font-size: 26px;
     max-width: 500px;
   }
 }
@@ -1281,25 +1281,94 @@ a {
   padding: 0;
   margin: 0;
   font-size: 14px;
-  line-height: 26px;
+  line-height: 24px;
   text-align: center;
   color: #333;
 }
 
+@media (min-width: 768px) {
+  .review__paragraph {
+    margin: 0 auto 30px;
+    max-width: 440px;
+  }
+}
+
 .form {
+  position: relative;
   padding-left: 20px;
   padding-right: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .form {
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+@media (min-width: 768px) {
+  .form form {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .form form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 292px;
+    background-color: #e5e5e5;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
 }
 
 .form__heading {
   margin: 0px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   width: 100%;
   font-size: 18px;
   line-height: 26px;
   text-align: center;
   text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .form__heading {
+    font-size: 21px;
+  }
+  .form__heading--lines {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  .form__heading--lines::before, .form__heading--lines::after {
+    content: '';
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .form__heading--lines::before {
+    margin-right: 55px;
+  }
+  .form__heading--lines::after {
+    margin-left: 55px;
+  }
 }
 
 .form label {
@@ -1312,7 +1381,7 @@ a {
 .form input[type=text],
 .form input[type=phone],
 .form input[type=mail] {
-  padding: 20px;
+  padding: 16px 20px 17px;
   font-size: 18px;
   line-height: 26px;
   font-weight: bold;
@@ -1341,9 +1410,37 @@ a {
   width: 100%;
 }
 
+@media (min-width: 768px) {
+  .form__submit {
+    max-width: 324px;
+  }
+}
+
+.form__wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form__required {
+  font-size: 14px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: #333;
+  text-align: right;
+  vertical-align: bottom;
+}
+
 .name {
   position: relative;
-  padding-top: 25px;
+  padding-top: 20px;
   padding-bottom: 25px;
 }
 
@@ -1352,11 +1449,17 @@ a {
   position: absolute;
   top: 0;
   left: 50%;
-  width: 97vw;
+  width: 100vw;
   height: 1px;
   background-color: #e5e5e5;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+
+@media (min-width: 768px) {
+  .name::before {
+    display: none;
+  }
 }
 
 .name::after {
@@ -1364,11 +1467,23 @@ a {
   position: absolute;
   bottom: 0;
   left: 50%;
-  width: 97vw;
+  width: 100vw;
   height: 1px;
   background-color: #e5e5e5;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+
+@media (min-width: 768px) {
+  .name::after {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .name {
+    width: 40%;
+  }
 }
 
 .name label {
@@ -1400,9 +1515,8 @@ a {
 
 .contacts {
   position: relative;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 15px;
 }
 
 .contacts::after {
@@ -1410,17 +1524,43 @@ a {
   position: absolute;
   bottom: 0;
   left: 50%;
-  width: 95vw;
+  width: 100vw;
   height: 1px;
   background-color: #e5e5e5;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
 
+@media (min-width: 768px) {
+  .contacts::after {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .contacts {
+    width: 100%;
+  }
+}
+
+.contacts .form__heading {
+  margin-bottom: 17px;
+}
+
+@media (min-width: 768px) {
+  .contacts .form__heading {
+    position: relative;
+  }
+}
+
+.contacts label {
+  margin-left: 20px;
+}
+
 .contacts input {
   width: 100%;
-  margin-top: 15px;
-  margin-bottom: 20px;
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
 
 .radio__input {
@@ -1438,7 +1578,7 @@ a {
   position: relative;
   display: block;
   margin-left: 80px;
-  margin-top: 50px;
+  margin-top: 42px;
   font-weight: bold;
   text-transform: none;
   font-size: 18px;
@@ -1491,8 +1631,8 @@ a {
 
 .impression {
   position: relative;
-  padding-top: 25px;
-  padding-bottom: 50px;
+  padding-top: 15px;
+  padding-bottom: 40px;
   max-width: 320px;
   margin: 0 auto;
 }
@@ -1502,11 +1642,32 @@ a {
   position: absolute;
   bottom: 0;
   left: 50%;
-  width: 95vw;
+  width: 100vw;
   height: 1px;
   background-color: #e5e5e5;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+
+@media (min-width: 768px) {
+  .impression::after {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .impression {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    margin: 0;
+  }
+}
+
+.impression label {
+  font-size: 18px;
+  line-height: 26px;
+  text-transform: none;
 }
 
 .checkbox__input {
@@ -1524,11 +1685,16 @@ a {
   position: relative;
   display: block;
   margin-left: 80px;
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 55px;
   font-weight: bold;
   text-transform: none;
   font-size: 18px;
   line-height: 26px;
+}
+
+.checkbox:last-child {
+  margin-bottom: 35px;
 }
 
 .checkbox::before {
@@ -1542,6 +1708,25 @@ a {
   background-color: #f2f2f2;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+@media (min-width: 768px) {
+  .checkbox {
+    margin-bottom: 30px;
+    margin-left: 30px;
+  }
+}
+
+.showplaces .checkbox {
+  font-size: 18px;
+  line-height: 26px;
+  text-transform: none;
+}
+
+@media (min-width: 768px) {
+  .showplaces .checkbox {
+    width: 33%;
+  }
 }
 
 .checkbox__input:checked + .checkbox::before {
@@ -1566,16 +1751,82 @@ a {
 
 .showplaces {
   position: relative;
-  padding-top: 25px;
-  padding-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 5px;
   max-width: 320px;
   margin: 0 auto;
+}
+
+.showplaces::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  height: 1px;
+  background-color: #e5e5e5;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+@media (min-width: 768px) {
+  .showplaces::after {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .showplaces {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .showplaces .form__heading {
+    position: relative;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .showplaces__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.emotions {
+  padding-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .emotions {
+    width: 100%;
+  }
+}
+
+.emotions .form__heading {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .emotions .form__heading {
+    margin-bottom: 50px;
+  }
 }
 
 .emotions__textarea {
   width: 100%;
   margin-bottom: 50px;
-  padding: 20px;
+  padding: 15px 20px;
   background-color: #f2f2f2;
   resize: none;
   font-size: 18px;

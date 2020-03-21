@@ -1,7 +1,7 @@
 .impression {
     position: relative;
-    padding-top: 25px;
-    padding-bottom: 50px;
+    padding-top: 15px;
+    padding-bottom: 40px;
     max-width: 320px;
     margin: 0 auto;
 
@@ -10,14 +10,26 @@
         position: absolute;
         bottom: 0;
         left: 50%;
-        width: 95vw;
+        width: 100vw;
         height: 1px;
         background-color: #e5e5e5;
         transform: translateX(-50%);
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    @include tablet {
+        order: -1;
+        margin: 0;
     }
 }
 
-
-
+.impression label {
+    font-size: 18px;
+    line-height: 26px;
+    text-transform: none;
+}
 
 

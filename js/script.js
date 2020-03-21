@@ -27,13 +27,6 @@ $(document).ready (function(){
     }
 }); 
 
-// $(window).bind("load", function() {
-//     var w = $(window).width(); 
-//     if(w < 768) {
-//         menu.hide();
-//     }
-//  });
-
 $(function() {
 
     // Открываем меню по кнопен "Бургер"

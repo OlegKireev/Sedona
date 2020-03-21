@@ -1,6 +1,6 @@
 .review {
     padding-top: 25px;
-    padding-bottom: 25px;
+    padding-bottom: 10px;
     text-transform: uppercase;
 }
 
@@ -17,14 +17,14 @@
 }
 
 .review__heading {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     font-size: 18px;
     line-height: 26px;
     text-align: center;
 
     @include tablet {
         margin: 0 auto 30px;
-        font-size: 21px;
+        font-size: 26px;
         max-width: 500px;
     }
 }
@@ -33,8 +33,13 @@
     padding: 0;
     margin: 0;
     font-size: 14px;
-    line-height: 26px;
+    line-height: 24px;
     text-align: center;
     color: #333;
+
+    @include tablet {
+        margin: 0 auto 30px;
+        max-width: 440px;
+    }
 }
 

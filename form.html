@@ -84,7 +84,7 @@
                 </section>
 
                 <section class="form__contacts contacts">
-                    <h2 class="form__heading">Контактная информация:</h2>
+                    <h2 class="form__heading form__heading--lines">Контактная информация:</h2>
                     <label for="phone-field">Контактный телефон*:</label>
                     <input type="phone" name="phone" id="phone-field" placeholder="Введите телефон">
                     <label for="mail-field">Электронная почта*:</label>
@@ -102,22 +102,27 @@
                 </section>
 
                 <section class="form__showplaces showplaces">
-                    <h2 class="form__heading">Посещенные достопримечательности:</h2>
-                    <input class="checkbox__input" type="checkbox" name="bridge-of-devil" id="showplaces-bridge-of-devil-field">
-                    <label class="checkbox" for="showplaces-bridge-of-devil-field">Мост Дьявола</label>
-                    <input class="checkbox__input" type="checkbox" name="bell-mountain" id="showplaces-bell-mountain-field">
-                    <label class="checkbox" for="showplaces-bell-mountain-field">Гора-Колокол</label>
-                    <input class="checkbox__input" type="checkbox" name="slide-park" id="showplaces-slide-park-field">
-                    <label class="checkbox" for="showplaces-slide-park-field">Слайд-парк</label>
-                    <input class="checkbox__input" type="checkbox" name="red-rocks" id="showplaces-red-rocks-field">
-                    <label class="checkbox" for="showplaces-red-rocks-field">Красные скалы</label>
+                    <h2 class="form__heading form__heading--lines">Посещенные <br> достопримечательности:</h2>
+                    <div class="showplaces__wrapper">
+                        <input class="checkbox__input" type="checkbox" name="bridge-of-devil" id="showplaces-bridge-of-devil-field">
+                        <label class="checkbox" for="showplaces-bridge-of-devil-field">Мост Дьявола</label>
+                        <input class="checkbox__input" type="checkbox" name="bell-mountain" id="showplaces-bell-mountain-field">
+                        <label class="checkbox" for="showplaces-bell-mountain-field">Гора-Колокол</label>
+                        <input class="checkbox__input" type="checkbox" name="slide-park" id="showplaces-slide-park-field">
+                        <label class="checkbox" for="showplaces-slide-park-field">Слайд-парк</label>
+                        <input class="checkbox__input" type="checkbox" name="red-rocks" id="showplaces-red-rocks-field">
+                        <label class="checkbox" for="showplaces-red-rocks-field">Красные скалы</label>
+                    </div>
                 </section>
 
                 <section class="form__emotions emotions">
-                    <h2 class="form__heading">Опишите свои эмоции:</h2>
+                    <h2 class="form__heading form__heading--lines">Опишите свои эмоции:</h2>
                     <textarea class="emotions__textarea" name="emotions" id="emotions-field" rows="5" placeholder="Опишите подробно все свои восторги"></textarea>
                 </section>
-                <button type="submit" class="form__submit btn btn--blue">Отправить отзыв</button>
+                <div class="form__wrapper">
+                    <button class="form__submit btn btn--blue" type="submit">Отправить отзыв</button>
+                    <span class="form__required">* — обязательные поля</span>
+                </div>
                 </form>
             </section>
             <!-- <section class="advantages">
