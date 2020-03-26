@@ -4,6 +4,7 @@
     padding-bottom: 5px;
     max-width: 320px;
     margin: 0 auto;
+    overflow: hidden;
 
     &::after {
         content: "";
@@ -21,33 +22,30 @@
     }
 
     @include tablet {
-        // display: flex;
-        // flex-wrap: wrap;
-        // justify-content: center;
         max-width: 100%;
         width: 100%;
     }
 }
 
 .showplaces .form__heading {
-
     @include tablet {
         position: relative;
         max-width: 100%;
-
-        // Серые полосы по бокам от заголовка
-        
+        margin-bottom: 25px;
     }
 }
-
-
-  
 
 .showplaces__wrapper {
     @include tablet {
         display: flex;
         justify-content: flex-end;
         flex-wrap: wrap;
+    }
+
+    @include desktop {
+        justify-content: space-between;
+        position: relative;
+        left: 75px;
     }
 }
 

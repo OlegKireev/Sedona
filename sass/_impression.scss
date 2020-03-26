@@ -2,7 +2,7 @@
     position: relative;
     padding-top: 15px;
     padding-bottom: 40px;
-    max-width: 320px;
+    // max-width: 320px;
     margin: 0 auto;
 
     &::after {
@@ -23,9 +23,24 @@
     @include tablet {
         order: -1;
         margin: 0;
+        padding-bottom: 0;
+    }
+
+    @include desktop {
+        padding-top: 0;
+        width: 45%;
     }
 }
 
+.impression .form__heading {
+    @include tablet {
+        margin-bottom: 75px;
+    }
+
+    @include desktop {
+        text-align: center;
+    }
+}
 .impression label {
     font-size: 18px;
     line-height: 26px;

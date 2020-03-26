@@ -47,6 +47,21 @@
     }
 }
 
+.promo__slogan--incidental {
+    @include tablet {
+        height: auto;
+        margin-top: 95px;
+        margin-bottom: 120px;
+        // background-size: 10%;
+    }
+}
+
 .promo--incidental {
     min-height: 160px;
+    padding-top: 0;
+    
+    @include tablet {
+        // height: 100%;
+        max-height: 290px;
+    }
 }

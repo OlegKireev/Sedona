@@ -2,6 +2,10 @@
     padding-top: 25px;
     padding-bottom: 10px;
     text-transform: uppercase;
+
+    @include desktop {
+        padding-top: 75px;
+    }
 }
 
 .review__description {
@@ -11,7 +15,7 @@
     padding-bottom: 5px;
 
     @include tablet {
-        padding-top: 25px;
+        padding-top:50px;
         padding-bottom: 50px;
     }
 }
@@ -24,7 +28,7 @@
 
     @include tablet {
         margin: 0 auto 30px;
-        font-size: 26px;
+        font-size: 30px;
         max-width: 500px;
     }
 }
@@ -38,7 +42,7 @@
     color: #333;
 
     @include tablet {
-        margin: 0 auto 30px;
+        margin: 0 auto;
         max-width: 440px;
     }
 }

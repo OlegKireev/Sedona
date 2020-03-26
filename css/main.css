@@ -744,8 +744,23 @@ a {
   }
 }
 
+@media (min-width: 768px) {
+  .promo__slogan--incidental {
+    height: auto;
+    margin-top: 95px;
+    margin-bottom: 120px;
+  }
+}
+
 .promo--incidental {
   min-height: 160px;
+  padding-top: 0;
+}
+
+@media (min-width: 768px) {
+  .promo--incidental {
+    max-height: 290px;
+  }
 }
 
 .advantages {
@@ -1181,7 +1196,7 @@ a {
 }
 
 .page-footer__socials {
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 
 @media (min-width: 768px) {
@@ -1248,6 +1263,12 @@ a {
   text-transform: uppercase;
 }
 
+@media (min-width: 1200px) {
+  .review {
+    padding-top: 75px;
+  }
+}
+
 .review__description {
   position: relative;
   padding-left: 20px;
@@ -1257,7 +1278,7 @@ a {
 
 @media (min-width: 768px) {
   .review__description {
-    padding-top: 25px;
+    padding-top: 50px;
     padding-bottom: 50px;
   }
 }
@@ -1272,7 +1293,7 @@ a {
 @media (min-width: 768px) {
   .review__heading {
     margin: 0 auto 30px;
-    font-size: 26px;
+    font-size: 30px;
     max-width: 500px;
   }
 }
@@ -1288,7 +1309,7 @@ a {
 
 @media (min-width: 768px) {
   .review__paragraph {
-    margin: 0 auto 30px;
+    margin: 0 auto;
     max-width: 440px;
   }
 }
@@ -1305,6 +1326,13 @@ a {
     padding-left: 60px;
     padding-right: 60px;
     padding-bottom: 60px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .form {
+    padding-left: 120px;
+    padding-right: 120px;
   }
 }
 
@@ -1380,7 +1408,8 @@ a {
 
 .form input[type=text],
 .form input[type=phone],
-.form input[type=mail] {
+.form input[type=mail],
+.form textarea {
   padding: 16px 20px 17px;
   font-size: 18px;
   line-height: 26px;
@@ -1388,6 +1417,26 @@ a {
   color: #000;
   background-color: #f2f2f2;
   border: none;
+  outline: none;
+}
+
+.form input[type=text]:hover,
+.form input[type=phone]:hover,
+.form input[type=mail]:hover,
+.form textarea:hover {
+  background-color: #e5e5e5;
+}
+
+.form input[type=text]:focus, .form input[type=text]:active,
+.form input[type=phone]:focus,
+.form input[type=phone]:active,
+.form input[type=mail]:focus,
+.form input[type=mail]:active,
+.form textarea:focus,
+.form textarea:active {
+  background-color: #fff;
+  -webkit-box-shadow: inset 0px 0px 0 4px #e5e5e5;
+          box-shadow: inset 0px 0px 0 4px #e5e5e5;
 }
 
 .form input::-webkit-input-placeholder {
@@ -1416,6 +1465,12 @@ a {
   }
 }
 
+@media (min-width: 1200px) {
+  .form__submit {
+    max-width: 480px;
+  }
+}
+
 .form__wrapper {
   width: 100%;
   display: -webkit-box;
@@ -1430,12 +1485,19 @@ a {
 }
 
 .form__required {
+  display: none;
   font-size: 14px;
   line-height: 26px;
   text-transform: uppercase;
   color: #333;
   text-align: right;
   vertical-align: bottom;
+}
+
+@media (min-width: 768px) {
+  .form__required {
+    display: inline;
+  }
 }
 
 .name {
@@ -1482,7 +1544,22 @@ a {
 
 @media (min-width: 768px) {
   .name {
-    width: 40%;
+    width: 41%;
+    padding-top: 15px;
+    padding-bottom: 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .name {
+    padding-top: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .name .form__heading {
+    text-align-last: left;
+    margin-bottom: 55px;
   }
 }
 
@@ -1540,6 +1617,19 @@ a {
 @media (min-width: 768px) {
   .contacts {
     width: 100%;
+    padding-bottom: 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contacts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding-top: 15px;
+    padding-bottom: 5px;
   }
 }
 
@@ -1550,6 +1640,13 @@ a {
 @media (min-width: 768px) {
   .contacts .form__heading {
     position: relative;
+    margin-bottom: 23px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contacts .form__heading {
+    margin-bottom: 70px;
   }
 }
 
@@ -1557,10 +1654,105 @@ a {
   margin-left: 20px;
 }
 
-.contacts input {
+@media (min-width: 1200px) {
+  .contacts label {
+    margin-left: 0;
+    margin-right: 15px;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+}
+
+.contacts .contacts__input input {
+  position: relative;
   width: 100%;
   margin-top: 5px;
   margin-bottom: 15px;
+  outline: none;
+  padding-right: 80px;
+}
+
+@media (min-width: 1200px) {
+  .contacts .contacts__input input {
+    max-width: 315px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contacts span {
+    display: none;
+  }
+}
+
+.contacts__input {
+  width: 100%;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .contacts__input {
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contacts__input {
+    width: 66%;
+  }
+}
+
+.contacts__column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (min-width: 1200px) {
+  .contacts__column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contacts__column:last-child {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
+.contacts__icon {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 58px;
+  height: 58px;
+  background-color: #e6e6e6;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 30%;
+}
+
+@media (min-width: 1200px) {
+  .contacts__icon {
+    right: 7px;
+  }
+}
+
+.contacts__icon--phone {
+  background-image: url("../img/icon-phone.svg");
+}
+
+.contacts__icon--mail {
+  background-image: url("../img/icon-mail.svg");
 }
 
 .radio__input {
@@ -1598,17 +1790,21 @@ a {
           transform: translateY(-50%);
 }
 
+@media (min-width: 768px) {
+  .radio {
+    margin-bottom: 50px;
+  }
+}
+
 .radio__input:checked + .radio::after {
   content: "";
   position: absolute;
-  left: -61px;
-  top: 50%;
+  left: -60px;
+  top: 2px;
   width: 22px;
   height: 22px;
   border-radius: 50%;
   background-color: #333;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
 }
 
 .radio__input:hover:not(:disabled) + .radio::before,
@@ -1629,11 +1825,29 @@ a {
   opacity: 0.3;
 }
 
+.radio__input + .radio::after {
+  content: '';
+  -webkit-transition: all 2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.radio__input:not(:checked) + .radio:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+.radio__input:checked + .radio:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
 .impression {
   position: relative;
   padding-top: 15px;
   padding-bottom: 40px;
-  max-width: 320px;
   margin: 0 auto;
 }
 
@@ -1661,6 +1875,26 @@ a {
         -ms-flex-order: -1;
             order: -1;
     margin: 0;
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .impression {
+    padding-top: 0;
+    width: 45%;
+  }
+}
+
+@media (min-width: 768px) {
+  .impression .form__heading {
+    margin-bottom: 75px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .impression .form__heading {
+    text-align: center;
   }
 }
 
@@ -1713,7 +1947,13 @@ a {
 @media (min-width: 768px) {
   .checkbox {
     margin-bottom: 30px;
-    margin-left: 30px;
+    margin-left: 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .checkbox {
+    margin-left: 0;
   }
 }
 
@@ -1726,6 +1966,12 @@ a {
 @media (min-width: 768px) {
   .showplaces .checkbox {
     width: 33%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .showplaces .checkbox {
+    max-width: 21%;
   }
 }
 
@@ -1755,6 +2001,7 @@ a {
   padding-bottom: 5px;
   max-width: 320px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .showplaces::after {
@@ -1786,6 +2033,7 @@ a {
   .showplaces .form__heading {
     position: relative;
     max-width: 100%;
+    margin-bottom: 25px;
   }
 }
 
@@ -1802,6 +2050,16 @@ a {
   }
 }
 
+@media (min-width: 1200px) {
+  .showplaces__wrapper {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: relative;
+    left: 75px;
+  }
+}
+
 .emotions {
   padding-top: 20px;
 }
@@ -1809,6 +2067,7 @@ a {
 @media (min-width: 768px) {
   .emotions {
     width: 100%;
+    padding-top: 45px;
   }
 }
 
@@ -1819,7 +2078,7 @@ a {
 
 @media (min-width: 768px) {
   .emotions .form__heading {
-    margin-bottom: 50px;
+    margin-bottom: 55px;
   }
 }
 

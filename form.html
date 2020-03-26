@@ -37,7 +37,7 @@
 
             <section class="promo promo--incidental">
                 <h1 class="visually-hidden">Седона</h1>
-                <img class="promo__slogan" src="img/text-sedona.svg" width="229" height="39" alt="Добро пожаловать в Седону">
+                <img class="promo__slogan promo__slogan--incidental" src="img/text-sedona.svg" width="229" height="39" alt="Добро пожаловать в Седону">
             </section>
 
             <section class="review">
@@ -85,10 +85,20 @@
 
                 <section class="form__contacts contacts">
                     <h2 class="form__heading form__heading--lines">Контактная информация:</h2>
-                    <label for="phone-field">Контактный телефон*:</label>
-                    <input type="phone" name="phone" id="phone-field" placeholder="Введите телефон">
-                    <label for="mail-field">Электронная почта*:</label>
-                    <input type="mail" name="mail" id="mail-field" placeholder="Введите e-mail">
+                    <div class="contacts__column">
+                        <label for="phone-field"><span>Контактный </span>телефон*:</label>
+                        <div class="contacts__input">
+                            <input type="phone" name="phone" id="phone-field" placeholder="Введите телефон">
+                            <div class="contacts__icon contacts__icon--phone"></div>
+                        </div>
+                    </div>
+                    <div class="contacts__column">
+                        <label for="mail-field">Электронная почта*:</label>
+                        <div class="contacts__input">
+                            <input type="mail" name="mail" id="mail-field" placeholder="Введите e-mail">
+                            <div class="contacts__icon contacts__icon--mail"></div>
+                        </div>
+                    </div>
                 </section>
 
                 <section class="form__impression impression">
@@ -104,14 +114,14 @@
                 <section class="form__showplaces showplaces">
                     <h2 class="form__heading form__heading--lines">Посещенные <br> достопримечательности:</h2>
                     <div class="showplaces__wrapper">
-                        <input class="checkbox__input" type="checkbox" name="bridge-of-devil" id="showplaces-bridge-of-devil-field">
+                        <input class="checkbox__input" type="checkbox" name="bridge-of-devil" id="showplaces-bridge-of-devil-field" checked>
                         <label class="checkbox" for="showplaces-bridge-of-devil-field">Мост Дьявола</label>
-                        <input class="checkbox__input" type="checkbox" name="bell-mountain" id="showplaces-bell-mountain-field">
+                        <input class="checkbox__input" type="checkbox" name="bell-mountain" id="showplaces-bell-mountain-field" checked>
                         <label class="checkbox" for="showplaces-bell-mountain-field">Гора-Колокол</label>
-                        <input class="checkbox__input" type="checkbox" name="slide-park" id="showplaces-slide-park-field">
+                        <input class="checkbox__input" type="checkbox" name="slide-park" id="showplaces-slide-park-field" checked>
                         <label class="checkbox" for="showplaces-slide-park-field">Слайд-парк</label>
                         <input class="checkbox__input" type="checkbox" name="red-rocks" id="showplaces-red-rocks-field">
-                        <label class="checkbox" for="showplaces-red-rocks-field">Красные скалы</label>
+                        <label class="checkbox" for="showplaces-red-rocks-field">Красные  скалы</label>
                     </div>
                 </section>
 
@@ -124,123 +134,7 @@
                     <span class="form__required">* — обязательные поля</span>
                 </div>
                 </form>
-            </section>
-            <!-- <section class="advantages">
-
-                <div class="advantages__cards reasons">
-
-                    <div class="reasons__card reasons__card--blue">
-                        <h3 class="reasons__heading">
-                            Настоящий городок
-                        </h3>
-                        <span class="reasons__index">— №1 —</span>
-                        <p class="reasons__paragraph">
-                            Седона не аттракцион для туристов, там течет своя жизнь
-                        </p>
-                    </div>
-
-                    <div class="reasons__card reasons__card--double">
-                        <picture>
-                            <source media="(min-width: 1200px)" srcset="img/photo-city-desktop@1x.jpg 1x, img/photo-city-desktop@2x.jpg 2x">
-                            <source media="(min-width: 421px)" srcset="img/photo-city-tablet@1x.jpg 1x, img/photo-city-tablet@2x.jpg 2x">
-                            <img class="reasons__image" src="img/photo-city-mobile@1x.jpg" srcset="img/photo-city-mobile@2x.jpg 2x" alt="Жилье в Седоне">
-                        </picture>
-                    </div>
-
-                    <div class="reasons__card reasons__card--white">
-                        <img class="reasons__icon" src="img/icon-house.svg" width="39" height="37" alt="Жилье в Седоне">
-                        <h3 class="reasons__heading">
-                            Жилье
-                        </h3>
-                        <p class="reasons__paragraph">
-                            Рекомендуем пожить в настоящем мотеле, все как в кино!
-                        </p>
-                    </div>
-
-                    <div class="reasons__card reasons__card--white">
-                        <img class="reasons__icon" src="img/icon-gift.svg" width="32" height="38" alt="Жилье в Седоне">
-                        <h3 class="reasons__heading">
-                            Сувениры
-                        </h3>
-                        <p class="reasons__paragraph">
-                            Не только китайского, но и местного производства!
-                        </p>
-                    </div>
-
-                    <div class="reasons__card reasons__card--white">
-                        <img class="reasons__icon" src="img/icon-burger.svg" width="40" height="35" alt="Жилье в Седоне">
-                        <h3 class="reasons__heading">
-                            Еда
-                        </h3>
-                        <p class="reasons__paragraph">
-                            Всегда заказывайте фирменный бургер, вы не разочаруетесь!
-                        </p>
-                    </div>
-
-                    <div class="reasons__card reasons__card--blue reasons__card--right">
-                        <h3 class="reasons__heading">
-                            Там есть <br> мост дьявола
-                        </h3>
-                        <span class="reasons__index">— №2 —</span>
-                        <p class="reasons__paragraph">
-                            Да, но по нему можно пройти! Если вы осмелитесь, конечно
-                        </p>
-                    </div>
-
-                    <div class="reasons__card reasons__card--double">
-                        <picture>
-                            <source media="(min-width: 1200px)" srcset="img/photo-bridge-desktop@1x.jpg 1x, img/photo-bridge-desktop@2x.jpg 2x">
-                            <source media="(min-width: 321px)" srcset="img/photo-bridge-tablet@1x.jpg 1x, img/photo-bridge-tablet@2x.jpg 2x">
-                            <img class="reasons__image" src="img/photo-bridge-mobile@1x.jpg" srcset="img/photo-bridge-mobile@2x.jpg 2x" alt="Пейзажи Седоны">
-                        </picture>
-                    </div>
-
-                    <div class="reasons__card reasons__card--gray">
-                        <h3 class="reasons__heading">
-                            Небольшая площадь
-                        </h3>
-                        <span class="reasons__index">— №3 —</span>
-                        <p class="reasons__paragraph">
-                            Все интересные места находятся очень близко
-                        </p>
-                    </div>
-
-                    <div class="reasons__card reasons__card--gray">
-                        <h3 class="reasons__heading">
-                            Красивая дорога
-                        </h3>
-                        <span class="reasons__index">— №4 —</span>
-                        <p class="reasons__paragraph">
-                            Ехать в Седону из Лас-Вегаса совсем не скучно!
-                        </p>
-                    </div>
-
-                    <div class="reasons__card reasons__card--gray">
-                        <h3 class="reasons__heading">
-                            Мало туристов
-                        </h3>
-                        <span class="reasons__index">— №5 —</span>
-                        <p class="reasons__paragraph">
-                            Большинство едет в гранд каньон и толпится там
-                        </p>
-                    </div>
-
-                </div>
-            </section> 
-
-            <section class="intrested">
-                <h2 class="intrested__heading">Заинтересовались?</h2>
-                <p class="intrested__paragraph">
-                    Укажите предполагаемые даты поездки, <br>
-                    и мы покажем вам лучшие предложения гостиниц в Седоне
-                </p>
-                <a class="btn btn__blue intrested__btn" href="#">Найти гостиницу</a>
-            </section>
-
-            <section class="map" id="map">
-                
-            </section> -->
-            
+            </section>            
         </main>
 
         <footer class="page-footer">

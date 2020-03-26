@@ -10,7 +10,7 @@
 }
 
 @mixin mobile {
-    @media (min-width: $mdmobile-width) {
+    @media (min-width: $mobile-width) {
       @content;
     }
   }

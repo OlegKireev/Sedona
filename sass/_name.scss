@@ -34,7 +34,20 @@
     }
 
     @include tablet {
-        width: 40%;
+        width: 41%;
+        padding-top: 15px;
+        padding-bottom: 50px;
+    }
+
+    @include desktop {
+        padding-top: 0;
+    }
+}
+
+.name .form__heading {
+    @include tablet {
+        text-align-last: left;
+        margin-bottom: 55px;
     }
 }
 
