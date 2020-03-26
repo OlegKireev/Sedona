@@ -108,15 +108,15 @@
     position: absolute;
     top: 5px;
     right: 0;
-    width: 58px;
-    height: 58px;
+    width: 59px;
+    height: 59px;
     background-color: #e6e6e6;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: 30%;
 
     @include desktop {
-        right: 7px;
+        right: 2px;
     }
 }
 

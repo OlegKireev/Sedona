@@ -45,9 +45,8 @@
     }
 
     &:active {
-        color: rgba($color: #fff, $alpha: 0.3);
+        color: rgba($color: #766357, $alpha: 0.3);
     }
-
 
        @include tablet {
         font-size: 14px;
@@ -61,11 +60,13 @@
 
         &--active {
             color: #766357;
+
+            
         }
 
-        &:active {
-            color: #fff;
-        }
+        // &:active {
+        //     color: #fff;
+        // }
 
         &:visited {
             color: rgba($color: #000, $alpha: 0.3);

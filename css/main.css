@@ -511,7 +511,7 @@ a {
 }
 
 .main-menu__link:active {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(118, 99, 87, 0.3);
 }
 
 @media (min-width: 768px) {
@@ -526,9 +526,6 @@ a {
   }
   .main-menu__link--active {
     color: #766357;
-  }
-  .main-menu__link:active {
-    color: #fff;
   }
   .main-menu__link:visited {
     color: rgba(0, 0, 0, 0.3);
@@ -1176,6 +1173,7 @@ a {
 
 @media (min-width: 1200px) {
   .page-footer {
+    padding-top: 45px;
     padding-left: 120px;
     padding-right: 120px;
   }
@@ -1215,6 +1213,15 @@ a {
   margin-top: 10px;
   font-size: 14px;
   text-transform: uppercase;
+}
+
+.page-footer__developer:hover svg,
+.page-footer__developer:focus svg {
+  fill: #81b3d2;
+}
+
+.page-footer__developer:active svg {
+  opacity: 0.3;
 }
 
 .page-footer__image {
@@ -1351,13 +1358,11 @@ a {
   .form form::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: 20px;
     left: 50%;
     width: 1px;
     height: 292px;
     background-color: #e5e5e5;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
   }
 }
 
@@ -1733,8 +1738,8 @@ a {
   position: absolute;
   top: 5px;
   right: 0;
-  width: 58px;
-  height: 58px;
+  width: 59px;
+  height: 59px;
   background-color: #e6e6e6;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -1743,7 +1748,7 @@ a {
 
 @media (min-width: 1200px) {
   .contacts__icon {
-    right: 7px;
+    right: 2px;
   }
 }
 

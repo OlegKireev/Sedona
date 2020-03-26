@@ -8,6 +8,13 @@
     <title>Sedona</title>
 </head>
 <body class="page-body">
+    
+    <svg class="svg=srite" display="none">
+        <symbol id="icon__html-academy" viewBox="0 0 154.4 195.3">
+            <path class="cls-1" d="M78,.6h-.8L.5,8.5V149.1l76.7,45.6,76.7-45.6V8.5Zm65.9,142.8L77.2,183.1,10.5,143.4V85.8l66.4,39.5v7.2L31.5,105.4v6.9l45.7,27.5v7.3L31.5,119.9v7l45.7,27.5,46.1-27.6v-7h0V97.1l20.6-12.3Zm-.1-66.1L125.6,88.1l-8.5,5L77,69.2v6.9l34.3,20.4-.3.2-.7.4-4.9,2.9L77,83.2v6.9l22.4,13.3L94,106.9h-.1L77,97.1V104L88,110.5l-11.3,6.8-66-39.2L76.8,38.3h0Zm.1-6.9L76.8,30.8h0L10.5,70.3V17.6l66.7-7,66.7,7Z"/>
+        </symbol>
+    </svg>
+
     <div class="page-wrapper">
         <header class="page-header">
             <section class="main-menu">
@@ -36,15 +43,14 @@
         <main class="page-main">
 
             <section class="promo promo--incidental">
-                <h1 class="visually-hidden">Седона</h1>
                 <img class="promo__slogan promo__slogan--incidental" src="img/text-sedona.svg" width="229" height="39" alt="Добро пожаловать в Седону">
             </section>
 
             <section class="review">
                 <div class="review__description">
-                    <h2 class="review__heading">
+                    <h1 class="review__heading">
                         Оставьте свой отзыв
-                    </h2>
+                    </h1>
                     <p class="review__paragraph">
                         Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях
                     </p>
@@ -146,10 +152,12 @@
                 <a href="#" class="socials__link socials__link--fb"></a>
                 <a href="#" class="socials__link socials__link--yt"></a>
             </div>
-            <div class="page-footer__developer">
+            <a class="page-footer__developer" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">
                 <span>Разработано</span>
-                <img class="page-footer__image" src="img/icon-htmlacademy.svg" width="27" height="24" alt="HTML-Academy">
-            </div>
+                    <svg class="page-footer__image" width="27" height="34">
+                        <use xlink:href="#icon__html-academy"></use>
+                    </svg>
+                </a>
         </footer>
 
     </div>

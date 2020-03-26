@@ -23,15 +23,16 @@
         justify-content: space-between;
         flex-wrap: wrap;
 
+        // Вертикальная серая полоса
         &::before {
             content: "";
             position: absolute;
-            top: 0;
+            top: 20px;
             left: 50%;
             width: 1px;
             height: 292px;
             background-color: #e5e5e5;
-            transform: translateX(-50%);
+            // transform: translateX(-50%);
         }
     }
 }
