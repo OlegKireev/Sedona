@@ -1,41 +1,48 @@
 .name {
     position: relative;
     padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-bottom: 25px;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 100vw;
-        height: 1px;
-        background-color: #e5e5e5;
-        transform: translateX(-50%);
+    // &::before {
+    //     content: "";
+    //     position: absolute;
+    //     top: 0;
+    //     left: 50%;
+    //     width: 97vw;
+    //     height: 1px;
+    //     background-color: #e5e5e5;
+    //     transform: translateX(-50%);
         
-        @include tablet {
-            display: none;
-        }
-    }
+    //     @include tablet {
+    //         display: none;
+    //     }
+    // }
 
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 100vw;
-        height: 1px;
-        background-color: #e5e5e5;
-        transform: translateX(-50%);
+    // &::after {
+    //     content: "";
+    //     position: absolute;
+    //     bottom: 0;
+    //     left: 50%;
+    //     width: 97vw;
+    //     height: 1px;
+    //     background-color: #e5e5e5;
+    //     transform: translateX(-50%);
 
-        @include tablet {
-            display: none;
-        }
-    }
+    //     @include tablet {
+    //         display: none;
+    //     }
+    // }
 
     @include tablet {
         width: 41%;
+        border: none;
         padding-top: 15px;
+        padding-left: 0;
+        padding-right: 0;
         padding-bottom: 50px;
     }
 

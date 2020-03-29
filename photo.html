@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
+    <title>Sedona</title>
+</head>
+<body class="page-body">
+    
+    <svg class="svg=srite" display="none">
+        <symbol id="icon__html-academy" viewBox="0 0 154.4 195.3">
+            <path class="cls-1" d="M78,.6h-.8L.5,8.5V149.1l76.7,45.6,76.7-45.6V8.5Zm65.9,142.8L77.2,183.1,10.5,143.4V85.8l66.4,39.5v7.2L31.5,105.4v6.9l45.7,27.5v7.3L31.5,119.9v7l45.7,27.5,46.1-27.6v-7h0V97.1l20.6-12.3Zm-.1-66.1L125.6,88.1l-8.5,5L77,69.2v6.9l34.3,20.4-.3.2-.7.4-4.9,2.9L77,83.2v6.9l22.4,13.3L94,106.9h-.1L77,97.1V104L88,110.5l-11.3,6.8-66-39.2L76.8,38.3h0Zm.1-6.9L76.8,30.8h0L10.5,70.3V17.6l66.7-7,66.7,7Z"/>
+        </symbol>
+    </svg>
+
+    <div class="page-wrapper">
+        <header class="page-header">
+            <section class="main-menu">
+                <nav>
+                    <ul class="main-menu__list">
+                        <li class="main-menu__item">
+                            <a class="main-menu__link" href="index.html">Главная</a>
+                            <button class="btn main-menu__btn main-menu__btn--close"></button>
+                        </li>
+                        <li class="main-menu__item"><a class="main-menu__link main-menu__link--active" href="#">Фото и видео</a></li>
+                        <li class="main-menu__item"><a class="main-menu__link" href="form.html">Форма отзыва</a></li>
+                        <li class="main-menu__item"><a class="main-menu__link" href="#">HTML Academy</a></li>
+                    </ul>
+                    <a class="main-menu__link main-menu__link--logo" href="index.html">
+                        <picture>
+                            <source media="(min-width: 1200px)" srcset="img/logo-desktop.svg">
+                            <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
+                                <img src="img/logo-mobile.svg" height="102" width="83" alt="На главную">
+                        </picture>
+                    </a>
+                    <button class="btn main-menu__btn main-menu__btn--open"></button>
+                </nav>
+            </section>
+        </header>
+
+        <main class="page-main">
+
+            <section class="promo promo--incidental">
+                <img class="promo__slogan promo__slogan--incidental" src="img/text-sedona.svg" width="229" height="39" alt="Добро пожаловать в Седону">
+            </section>
+
+            <section class="review">
+                <div class="review__description">
+                    <h1 class="review__heading">
+                        Фото и видео
+                    </h1>
+                    <p class="review__paragraph">
+                        Не можете решиться на путешествие из-за курса? Фотографии помогут вам забыть о политике и экономике.
+                    </p>
+                </div>
+            </section>
+
+            <section class="photo">
+                <div class="photo__container">
+                    <img src="#" alt="Дорога пролегающая в неродных просторах">
+                </div>
+                <div class="photo__description">
+                    <h2 class="photo__name">
+                        Неродные просторы
+                    </h2>
+                    <p class="photo__author">
+                        Автор фото: Борис
+                    </p>
+                    <p class="photo__likes">
+                        1350
+                    </p>
+                </div>
+            </section>
+                       
+        </main>
+
+        <footer class="page-footer">
+            <div class="page-footer__hashtag">
+                <span>#Visitsedona</span>
+            </div>
+            <div class="page-footer__socials socials">
+                <a href="#" class="socials__link socials__link--tw"></a>
+                <a href="#" class="socials__link socials__link--fb"></a>
+                <a href="#" class="socials__link socials__link--yt"></a>
+            </div>
+            <a class="page-footer__developer" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">
+                <span>Разработано</span>
+                    <svg class="page-footer__image" width="27" height="34">
+                        <use xlink:href="#icon__html-academy"></use>
+                    </svg>
+                </a>
+        </footer>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=067ef420-7a25-481f-8881-77f62cba9613&lang=ru_RU" type="text/javascript"></script>
+    <script src="js/yandexMap.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

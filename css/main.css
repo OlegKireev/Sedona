@@ -1323,8 +1323,6 @@ a {
 
 .form {
   position: relative;
-  padding-left: 20px;
-  padding-right: 20px;
   padding-bottom: 40px;
 }
 
@@ -1508,49 +1506,20 @@ a {
 .name {
   position: relative;
   padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 25px;
-}
-
-.name::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 100vw;
-  height: 1px;
-  background-color: #e5e5e5;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-@media (min-width: 768px) {
-  .name::before {
-    display: none;
-  }
-}
-
-.name::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 100vw;
-  height: 1px;
-  background-color: #e5e5e5;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-@media (min-width: 768px) {
-  .name::after {
-    display: none;
-  }
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 @media (min-width: 768px) {
   .name {
     width: 41%;
+    border: none;
     padding-top: 15px;
+    padding-left: 0;
+    padding-right: 0;
     padding-bottom: 50px;
   }
 }
@@ -1598,31 +1567,18 @@ a {
 .contacts {
   position: relative;
   padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 15px;
-}
-
-.contacts::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 100vw;
-  height: 1px;
-  background-color: #e5e5e5;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-@media (min-width: 768px) {
-  .contacts::after {
-    display: none;
-  }
 }
 
 @media (min-width: 768px) {
   .contacts {
     width: 100%;
     padding-bottom: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
   }
 }
 
@@ -1852,26 +1808,12 @@ a {
 .impression {
   position: relative;
   padding-top: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 40px;
   margin: 0 auto;
-}
-
-.impression::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 100vw;
-  height: 1px;
-  background-color: #e5e5e5;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-@media (min-width: 768px) {
-  .impression::after {
-    display: none;
-  }
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 @media (min-width: 768px) {
@@ -1880,14 +1822,17 @@ a {
         -ms-flex-order: -1;
             order: -1;
     margin: 0;
+    padding-left: 0;
+    padding-right: 0;
     padding-bottom: 0;
+    border: none;
   }
 }
 
 @media (min-width: 1200px) {
   .impression {
-    padding-top: 0;
     width: 45%;
+    padding-top: 0;
   }
 }
 
@@ -2003,34 +1948,20 @@ a {
 .showplaces {
   position: relative;
   padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 5px;
   max-width: 320px;
   margin: 0 auto;
   overflow: hidden;
 }
 
-.showplaces::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 100vw;
-  height: 1px;
-  background-color: #e5e5e5;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-@media (min-width: 768px) {
-  .showplaces::after {
-    display: none;
-  }
-}
-
 @media (min-width: 768px) {
   .showplaces {
     max-width: 100%;
     width: 100%;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -2066,13 +1997,20 @@ a {
 }
 
 .emotions {
+  position: relative;
   padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-top: 1px solid #e5e5e5;
 }
 
 @media (min-width: 768px) {
   .emotions {
     width: 100%;
     padding-top: 45px;
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
   }
 }
 
@@ -2125,6 +2063,12 @@ a {
   font-size: 18px;
   line-height: 26px;
   font-weight: bold;
+}
+
+.photo {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-top: 1px solid #e5e5e5;
 }
 
 .page-body {
