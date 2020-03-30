@@ -10,6 +10,8 @@
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: 50% 50%;
+    transition: ease 0.2s;
+    
     &:not(:last-child) {
         margin-right: 6px;
     }

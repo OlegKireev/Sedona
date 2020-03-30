@@ -37,6 +37,7 @@
     background-color: #81b3d2;
     border-top: 1px solid #9ac2db;
     border-bottom: 1px solid #678fa8;
+    transition: ease 0.2s;
 
     @media (max-width: $tablet-width) {
         &:hover:not(&--logo), &:focus:not(&--logo) {

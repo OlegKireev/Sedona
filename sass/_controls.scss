@@ -1,0 +1,81 @@
+.controls {
+    // Немного поднимаем пункт управления из за сдвига тэга picture 
+    position: relative;
+    bottom: 3px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 280px;
+    margin: 0 auto;
+    // padding-left: 20px;
+    // padding-right: 20px;
+    background-color: #f2f2f2;
+}
+
+.controls__timeline {
+    position: absolute;
+    max-width: 280px;
+    width: 100%;
+    // Высота серого блока с кноками
+    bottom: 66px;
+    height: 45px;
+    background-color: #000;
+    opacity: 0.6;
+
+    // Линия для ползунка
+    &::before {
+        content: "";
+        position: absolute;
+        width: 90%;
+        height: 3px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #f2f2f2;
+        opacity: 0.2;
+    }
+
+    // Ползунок
+    &::after {
+        content: "";
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        top: 50%;
+        left: 20%;
+        transform: translateY(-50%);
+        background-color: #f2f2f2;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+}
+
+.controls__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 66px;
+    height: 66px;
+    background-color: #f2f2f2;
+
+    &:hover svg ,
+    &:focus svg {
+        fill: #333333;
+    }
+
+    &:active svg {
+        fill: #333333;
+        opacity: 0.3;
+    }
+
+    &:nth-of-type(2) {
+        margin-left: auto;
+    }
+}
+
+.controls__icon {
+    fill: #5c6870;
+    transition: 0.2s;
+
+}
