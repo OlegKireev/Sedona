@@ -760,6 +760,63 @@ a {
   }
 }
 
+.main-header {
+  padding-top: 25px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1200px) {
+  .main-header {
+    padding-top: 75px;
+  }
+}
+
+.main-header__description {
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+  .main-header__description {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+.main-header__heading {
+  margin-bottom: 25px;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .main-header__heading {
+    margin: 0 auto 30px;
+    font-size: 30px;
+    max-width: 500px;
+  }
+}
+
+.main-header__paragraph {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  color: #333;
+}
+
+@media (min-width: 768px) {
+  .main-header__paragraph {
+    margin: 0 auto;
+    max-width: 440px;
+  }
+}
+
 .advantages {
   padding-top: 25px;
   text-transform: uppercase;
@@ -1262,63 +1319,6 @@ a {
 
 .socials__link--yt {
   background-image: url("../img/icon-youtube.svg");
-}
-
-.review {
-  padding-top: 25px;
-  padding-bottom: 10px;
-  text-transform: uppercase;
-}
-
-@media (min-width: 1200px) {
-  .review {
-    padding-top: 75px;
-  }
-}
-
-.review__description {
-  position: relative;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 5px;
-}
-
-@media (min-width: 768px) {
-  .review__description {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-}
-
-.review__heading {
-  margin-bottom: 25px;
-  font-size: 18px;
-  line-height: 26px;
-  text-align: center;
-}
-
-@media (min-width: 768px) {
-  .review__heading {
-    margin: 0 auto 30px;
-    font-size: 30px;
-    max-width: 500px;
-  }
-}
-
-.review__paragraph {
-  padding: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  text-align: center;
-  color: #333;
-}
-
-@media (min-width: 768px) {
-  .review__paragraph {
-    margin: 0 auto;
-    max-width: 440px;
-  }
 }
 
 .form {
@@ -2069,6 +2069,10 @@ a {
   padding-left: 20px;
   padding-right: 20px;
   border-top: 1px solid #e5e5e5;
+}
+
+.video {
+  margin: 0 auto;
 }
 
 .page-body {

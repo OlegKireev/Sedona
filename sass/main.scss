@@ -28,6 +28,7 @@ body {
 @import "_main-menu.scss";
 @import "_page-main.scss";
 @import "_promo.scss";
+@import "_main-header.scss";
 @import "_advantages.scss";
 @import "_reasons.scss";
 @import "_intrested.scss";
@@ -35,7 +36,6 @@ body {
 @import "_page-footer.scss";
 @import "_socials";
 
-@import "_review.scss";
 @import "_form.scss";
 @import "_name.scss";
 @import "_contacts.scss";
@@ -46,6 +46,9 @@ body {
 @import "_emotions.scss";
 
 @import "_photo.scss";
+@import "_video.scss";
+@import "_movie.scss";
+@import "_controls.scss";
 
 .page-body {
     background-color: #f2f2f2;
