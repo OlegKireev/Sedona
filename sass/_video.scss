@@ -3,8 +3,12 @@
     padding-bottom: 40px;
     text-transform: uppercase;
 
+    @include tablet {
+        padding-top: 65px;
+    }
+
     @include desktop {
-        padding-top: 75px;
+        padding-top: 70px;
     }
 }
 
@@ -35,14 +39,20 @@
     color: #333;
 
     @include tablet {
-        margin: 0 auto 40px;
-        max-width: 440px;
+        margin: 0 auto 75px;
+        max-width: 500px;
     }
 }
 
 .video__container {
     position: relative;
     text-align: center;
+    max-width: 648px;
+    margin: 0 auto;
+    
+    @include desktop {
+        max-width: 800px;
+    }
 }
 
 .video picture {
@@ -50,6 +60,7 @@
     padding: 0;
 }
 
-.video__img {
-
+.video__link {
+    display: block;
+    line-height: 0.8;
 }

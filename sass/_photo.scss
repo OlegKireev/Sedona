@@ -3,16 +3,38 @@
     // max-width: $mobile-width;
     // width: 100%;
     // height: 200px;
+    @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 648px;
+        margin: 0 auto;
+    }
+
+    @include desktop {
+        max-width: $desktop-width;
+    }
 }
 
 .photo__container {
+    position: relative;
     padding: 20px;
     padding-bottom: 17px;
     border-bottom: 1px solid #e5e5e5;
     text-align: center;
 
     &:first-child {
-        border-top: 1px solid #e5e5e5;
+        @media (max-width: $tablet-width - 1) {
+            border-top: 1px solid #e5e5e5;
+        }
+    }
+
+    @include tablet {
+        padding: 0;
+        border: none;
+
+        &:not(:first-child) {
+            max-width: 50%;
+        }
     }
 }
 
@@ -23,6 +45,23 @@
     font-size: 14px;
     line-height: 24px;
     text-align: left;
+
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: $tablet-width;
+        background-color: #f2f2f2;
+        padding: 12px 20px 8px;
+    }
+
+    @include desktop {
+        max-width: $desktop-width-content;
+        position: absolute;
+        bottom: 0;
+        background-color: rgba($color: #000000, $alpha: 0.3);
+        color: #fff;
+    }
 }
 
 .photo__name {
@@ -55,4 +94,18 @@
 
 .photo__img {
     margin-bottom: 13px;
+
+    @include tablet {
+        margin-bottom: 0;
+    }
 }
+
+.photo__link {
+    // Убираем странное смещение ссылок
+    display: block;
+    line-height: 0.8;
+    @media (min-width: $tablet-width) and (max-width: $desktop-width - 1) {
+        background-color: #f2f2f2;
+    }
+}
+

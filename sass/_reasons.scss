@@ -135,6 +135,10 @@
     @include tablet {
         max-width: 66.67%;
     }
+
+    @include desktop {
+        width: 100%;
+    }
 }
 
 // Фотография

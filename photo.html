@@ -42,7 +42,7 @@
                             <a class="main-menu__link" href="index.html">Главная</a>
                             <button class="btn main-menu__btn main-menu__btn--close"></button>
                         </li>
-                        <li class="main-menu__item"><a class="main-menu__link main-menu__link--active" href="#">Фото и видео</a></li>
+                        <li class="main-menu__item"><a class="main-menu__link main-menu__link--active">Фото и видео</a></li>
                         <li class="main-menu__item"><a class="main-menu__link" href="form.html">Форма отзыва</a></li>
                         <li class="main-menu__item"><a class="main-menu__link" href="#">HTML Academy</a></li>
                     </ul>
@@ -58,11 +58,12 @@
             </section>
         </header>
 
-        <main class="page-main">
+        
+        <section class="promo promo--incidental">
+            <img class="promo__slogan promo__slogan--incidental" src="img/text-sedona.svg" width="229" height="39" alt="Добро пожаловать в Седону">
+        </section>
 
-            <section class="promo promo--incidental">
-                <img class="promo__slogan promo__slogan--incidental" src="img/text-sedona.svg" width="229" height="39" alt="Добро пожаловать в Седону">
-            </section>
+        <main class="page-main page-main--photo">
 
             <section class="main-header main-header--photo">
                 <div class="main-header__description">
@@ -86,12 +87,14 @@
                         </picture>
                     </a>
                     <div class="photo__description">
-                        <h2 class="photo__name">
-                            Неродные просторы
-                        </h2>
-                        <p class="photo__author">
-                            Автор фото: Борис
-                        </p>
+                        <div class="photo__text">
+                            <h2 class="photo__name">
+                                Неродные просторы
+                            </h2>
+                            <p class="photo__author">
+                                Автор фото: Борис
+                            </p>
+                        </div>
                         <p class="photo__likes">
                             1350
                         </p>
@@ -108,12 +111,14 @@
                         </picture>
                     </a>
                     <div class="photo__description">
-                        <h2 class="photo__name">
+                        <div class="photo__text">
+                            <h2 class="photo__name">
                             Местная растительность
-                        </h2>
-                        <p class="photo__author">
-                            Автор фото: Сергей
-                        </p>
+                            </h2>
+                            <p class="photo__author">
+                                Автор фото: Сергей
+                            </p>
+                        </div> 
                         <p class="photo__likes">
                             143
                         </p>
@@ -130,12 +135,14 @@
                         </picture>
                     </a>
                     <div class="photo__description">
-                        <h2 class="photo__name">
-                            Дорога на север
-                        </h2>
-                        <p class="photo__author">
-                            Автор фото: Петр
-                        </p>
+                        <div class="photo__text">
+                            <h2 class="photo__name">
+                                Дорога на север
+                            </h2>
+                            <p class="photo__author">
+                                Автор фото: Петр
+                            </p>
+                        </div>
                         <p class="photo__likes">
                             96
                         </p>
@@ -152,12 +159,14 @@
                         </picture>
                     </a>
                     <div class="photo__description">
-                        <h2 class="photo__name">
-                            Мост дьявола
-                        </h2>
-                        <p class="photo__author">
-                            Автор фото: Антон
-                        </p>
+                        <div class="photo__text">
+                            <h2 class="photo__name">
+                                Мост дьявола
+                            </h2>
+                            <p class="photo__author">
+                                Автор фото: Антон
+                            </p>
+                        </div>
                         <p class="photo__likes">
                             254
                         </p>
@@ -173,7 +182,7 @@
                     Смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз!
                 </p>
                 <div class="video__container">
-                    <a href="#" class="video__link">
+                    <a class="video__link" href="#">
                         <picture>
                             <source>
                                 <source media="(min-width: 1200px)" srcset="img/video-desktop@1x.jpg">

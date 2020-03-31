@@ -48,5 +48,7 @@
 }
 
 .main-header--photo {
-    padding-bottom: 25px;
+    @include tablet {
+        padding-bottom: 20px;
+    }
 }

@@ -1,27 +1,44 @@
 .controls {
-    // Немного поднимаем пункт управления из за сдвига тэга picture 
     position: relative;
-    bottom: 3px;
-
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     max-width: 280px;
     margin: 0 auto;
-    // padding-left: 20px;
-    // padding-right: 20px;
     background-color: #f2f2f2;
+
+    @include tablet {
+        position: absolute;
+        bottom: 0;
+        max-width: 648px;
+        width: 100%;
+        height: 93px;
+        background-color: #000;
+        opacity: 0.6;
+    }
+
+    @include desktop {
+        max-width: 800px;
+    }
 }
 
 .controls__timeline {
     position: absolute;
     max-width: 280px;
     width: 100%;
-    // Высота серого блока с кноками
     bottom: 66px;
     height: 45px;
     background-color: #000;
     opacity: 0.6;
+
+    @include tablet {
+        position: relative;
+        bottom: 0;
+        width: 400px;
+        max-width: 400px;
+        height: auto;
+        opacity: 1;
+    }
 
     // Линия для ползунка
     &::before {
@@ -48,6 +65,11 @@
         background-color: #f2f2f2;
         border-radius: 50%;
         cursor: pointer;
+
+        @include tablet {
+            background-color: #fff;
+            left: 30%;
+        }
     }
 }
 
@@ -70,12 +92,36 @@
     }
 
     &:nth-of-type(2) {
-        margin-left: auto;
+        @media (max-width: $tablet-width) {
+            margin-left: auto;
+        }
+    }
+
+    @include tablet {
+        height: 93px;
+        width: 93px;
+        background-color: transparent;
+
+        & svg {
+            fill: #fff;
+        }
+
+        &:hover svg,
+        &:focus svg {
+            fill: #c2c2c2;
+        }
+
+        &:active svg {
+            fill: #949494;
+        }
+
+        &:first-of-type {
+            order: -1;
+        }
     }
 }
 
 .controls__icon {
     fill: #5c6870;
     transition: 0.2s;
-
 }
