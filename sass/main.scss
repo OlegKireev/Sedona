@@ -1,29 +1,13 @@
-body {
-    font-family: 'PT Sans', 'Open Sans', sans-serif;
-}
-
-@keyframes bounce {
-    0% {
-        transform: translateY(-2000px);
-    }
-
-    // 70% {
-    //     transform: translateY(30px);
-    // }
-
-    90% {
-        transform: translateY(-10px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
 
 @import "_normalize.scss";
 @import "_variables.scss";
 @import "_mixins.scss";
+
+
+@import "_common.scss";
 @import "_btn.scss";
+
+// index.html 
 @import "_page-header.scss";
 @import "_main-menu.scss";
 @import "_page-main.scss";
@@ -36,6 +20,7 @@ body {
 @import "_page-footer.scss";
 @import "_socials";
 
+// form.html 
 @import "_form.scss";
 @import "_name.scss";
 @import "_contacts.scss";
@@ -45,43 +30,8 @@ body {
 @import "_showplaces.scss";
 @import "_emotions.scss";
 
+// photo.html 
 @import "_photo.scss";
 @import "_video.scss";
 @import "_movie.scss";
 @import "_controls.scss";
-
-.page-body {
-    background-color: #f2f2f2;
-}
-
-.page-wrapper {
-    background-color: #fff;
-    max-width: $tablet-width;
-    width: 100%;
-    margin: 0 auto;
-
-    @include tablet {
-        max-width: $desktop-width-content;
-    }
-
-    @include desktop {
-        box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.2);
-    }
-}
-
-// Боковые отступы начиная от планшетной версии
-.page-main--photo {
-    @include tablet {
-        padding-left: 60px;
-        padding-right: 60px;
-    }
-
-    @include desktop {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
-.display-none {
-    display: none;
-}
