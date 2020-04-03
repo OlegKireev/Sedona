@@ -68,7 +68,7 @@
                             <label for="first-name-field">Имя*:</label>
                         </div>
                         <div class="name__column">
-                            <input type="text" name="first-name" id="first-name-field" placeholder="Петр">
+                            <input type="text" name="first-name" id="first-name-field" placeholder="Петр" required>
                         </div>
                     </div>
                     <div class="name__row">
@@ -76,7 +76,7 @@
                             <label for="second-name-field">Фамилия*:</label>
                         </div>
                         <div class="name__column">
-                            <input type="text" name="second-name" id="second-name-field" placeholder="Иванов">
+                            <input type="text" name="second-name" id="second-name-field" placeholder="Иванов" required>
                         </div>
                     </div>
                     <div class="name__row">
@@ -94,14 +94,14 @@
                     <div class="contacts__column">
                         <label for="phone-field"><span>Контактный </span>телефон*:</label>
                         <div class="contacts__input">
-                            <input type="phone" name="phone" id="phone-field" placeholder="Введите телефон">
+                            <input type="phone" name="phone" id="phone-field" placeholder="Введите телефон" required>
                             <div class="contacts__icon contacts__icon--phone"></div>
                         </div>
                     </div>
                     <div class="contacts__column">
                         <label for="mail-field">Электронная почта*:</label>
                         <div class="contacts__input">
-                            <input type="mail" name="mail" id="mail-field" placeholder="Введите e-mail">
+                            <input type="mail" name="mail" id="mail-field" placeholder="Введите e-mail" required>
                             <div class="contacts__icon contacts__icon--mail"></div>
                         </div>
                     </div>
@@ -140,7 +140,22 @@
                     <span class="form__required">* — обязательные поля</span>
                 </div>
                 </form>
-            </section>            
+            </section> 
+        
+            <section class="modal modal--fail display-none">
+                <h2 class="modal__heading">Что-то полшло не так!</h2>
+                <p class="modal__paragraph">Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить</p>
+                <button class="btn btn--blue modal__btn">Ок</button>
+            </section>
+        
+            <section class="modal modal--success display-none">
+                <h2 class="modal__heading">Ваш отзыв отправлен!</h2>
+                <p class="modal__paragraph">Спасибо за ваше участие, ваш отзыв уже поступил к нам. В ближайшее время мы опубликуем егор на сайте.</p>
+                <div class="modal__container">
+                    <button class="btn btn--blue modal__btn">Ок</button>
+                </div>
+            </section>
+
         </main>
 
         <footer class="page-footer">

@@ -1,11 +1,10 @@
 {
-  "name": "gulp-config",
+  "name": "sedona",
   "version": "1.0.0",
-  "description": "Standart gulp config",
-  "main": "gulpfile.js",
+  "description": "Sedona is my first Gulp project",
+  "main": "index.js",
   "scripts": {
-    "build": "gulp build",
-    "start": "npm run build && gulp serve"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -13,31 +12,11 @@
   },
   "author": "FluckyMENDES",
   "license": "ISC",
-  "devDependencies": {
-    "autoprefixer": "^9.7.4",
-    "browser-sync": "^2.26.7",
-    "mqpacker": "^7.0.0",
-    "del": "^5.1.0",
-    "gulp": "^4.0.2",
-    "gulp-cheerio": "^1.0.0",
-    "gulp-config": "^0.3.0",
-    "gulp-csso": "^4.0.1",
-    "gulp-imagemin": "^7.1.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-plumber": "^1.2.0",
-    "gulp-postcss": "^8.0.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-replace": "^1.0.0",
-    "gulp-svg-sprite": "^1.5.0",
-    "gulp-svgmin": "^2.2.0",
-    "gulp-svgstore": "^7.0.1",
-    "gulp-svgo": "^2.1.1",
-    "gulp-uglify": "^3.0.2",
-    "normalize-scss": "^7.0.1",
-    "run-sequence": "^2.2.1"
-  },
   "bugs": {
     "url": "https://github.com/FluckyMENDES/Sedona/issues"
   },
-  "homepage": "https://github.com/FluckyMENDES/Sedona#readme"
+  "homepage": "https://github.com/FluckyMENDES/Sedona#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
 }
