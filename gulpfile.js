@@ -1,21 +1,26 @@
 'use strict';
- 
-var 	
-	gulp           = require('gulp'),
-	sass           = require('gulp-sass'),
-	browserSync    = require('browser-sync'),
-	concat         = require('gulp-concat'),
-	uglify         = require('gulp-uglify'),
-	cleanCSS       = require('gulp-clean-css'),
-	rename         = require('gulp-rename'),
-	autoprefixer   = require('gulp-autoprefixer'),
-	notify         = require("gulp-notify"),
-	imagemin       = require('gulp-imagemin'), 
-    pngquant       = require('imagemin-pngquant'), 
-    cache          = require('gulp-cache'),
-    del            = require('del');
+  	
+var	gulp           = require('gulp');
+var	sass           = require('gulp-sass');
+var	browserSync    = require('browser-sync');
+var	concat         = require('gulp-concat');
+var	uglify         = require('gulp-uglify');
+var	cleanCSS       = require('gulp-clean-css');
+var	rename         = require('gulp-rename');
+var	autoprefixer   = require('gulp-autoprefixer');
+var	notify         = require("gulp-notify");
+var	imagemin       = require('gulp-imagemin');
+var pngquant       = require('imagemin-pngquant');
+var cache          = require('gulp-cache');
+var	del            = require('del');
+var	svgstore	   = require('gulp-svgstore');
+var	svgmin		   = require('gulp-svgmin');
+var	path		   = require('path');
+var	posthtml	   = require('gulp-posthtml');
+var	include		   = require('posthtml-include');
+var	cheerio 	   = require('gulp-cheerio');
 
-// localhost and autoreaload
+// Включение browser-sync
 gulp.task('browser-sync', function() {
 	browserSync({
 		server: {
@@ -46,7 +51,8 @@ gulp.task('img', function() {
 		svgoPlugins: [{removeViewBox: false}],
 		use: [pngquant()]
 	})))
-	.pipe(gulp.dest('build/img')); // Куда кладем обработанные изображения
+	.pipe(gulp.dest('build/img')) // Куда кладем обработанные изображения
+	.pipe(browserSync.reload({stream: true}));
 });
 
 // Объединяем библиотеки к основному .js-файлу
@@ -91,6 +97,44 @@ gulp.task('js', function() {
 	.pipe(browserSync.reload({stream: true})); // Обновляем страницу
 });
 
+// Создание svg спрайта
+gulp.task('sprite', function () {
+    return gulp
+        .src('source/img/sprite/*.svg') // Берем все .svg файлы из папки img/sprite исходников
+        .pipe(svgmin(function (file) { 
+            var prefix = path.basename(file.relative, path.extname(file.relative));
+            return {
+                plugins: [{
+                    cleanupIDs: {
+                        prefix: prefix + '-',
+                        minify: true // Минифицирем их
+                    }
+                }]
+            }
+		}))
+		.pipe(cheerio({
+            run: function ($) {
+				$('[fill]').removeAttr('fill'); // Убираем цвет иконки
+				$('[stroke]').removeAttr('stroke'); // Убираем обводку иконки
+				$('[style]').removeAttr('style'); // Убираем стили иконки
+            },
+            parserOptions: { xmlMode: true }
+		}))
+		// здесь может понадобиться плагин replace, если cherrio будет менять знак ">"
+        .pipe(svgstore()) // Собираем их в страйт
+        .pipe(gulp.dest('build/img/')); // Кладем в папку сборки
+});
+
+// Вставляем svg спрайт в html файлы
+gulp.task('posthtml', function () {
+	return gulp.src('source/*.html') // Берем все файлы .html в папке исходников
+		.pipe(posthtml([
+			include() // Вставляем вместо тега <include> содержимое указзанное в атрибуте src тега <include> (svg спрайт)
+		]))
+		.pipe(gulp.dest('build')); // Кладем в папку сборки
+});
+
+
 // Отслеживаем за изменениями
 gulp.task('watch', function(cb) {
 	gulp.parallel(
@@ -98,8 +142,9 @@ gulp.task('watch', function(cb) {
 		'browser-sync'
 	)(cb);
 	gulp.watch('source/sass/**/*.scss', gulp.series('sass')); // При сохранении любого .scss файла выполнить таск 'sass'
-	gulp.watch(['source/libs/**/*.js', 'source/js/script.js'], gulp.series('js')); // При сохранении любого .js файла выполнить таск 'js'
-	gulp.watch('source/**/*.html', gulp.series('html')); // При сохранении любого .html файла выполнить таск 'html'
+	gulp.watch(['source/libs/**/*.js', 'source/js/*.js'], gulp.series('js')); // При сохранении любого .js файла выполнить таск 'js'
+	gulp.watch('source/**/*.html', gulp.series('posthtml')); // При сохранении любого .html файла выполнить таск 'posthtml'
+	gulp.watch('source/img/**/*', gulp.series('sprite', 'posthtml', 'img')); // При изменении (добавлении и удалении) любого изображения из папки исходников выполнить таск 'img', также пересобирает svg спрайт
 	gulp.watch('source/*.html').on('change', browserSync.reload); // При изменении любого .html файла обновить страницу
 });
 
@@ -107,10 +152,12 @@ gulp.task('watch', function(cb) {
 gulp.task('build', gulp.series(
 	'clean', // Очищаем папку сборки
 	'img', // Обработка изображении и помещение их в папку сборки
-	'copy', // Копируем файлы ненуждаюзиеся в обработке
+	'copy', // Копируем файлы ненуждающиеся в обработке
 	'sass', // Конвертируем SCSS в CSS и помещаем их в папку сборки
 	'js', // Минифицируем все js файлы и помещаем их в папку сборки
-	'html', // Перемещаем файлы HTML в папку сборки
+	'sprite', // Собираем svg sprite
+	'posthtml', // Вставлем svg спрайт в разметку
+	// 'html',  Перемещаем файлы HTML в папку сборки
 	function(cb) {
     cb();
 }));
