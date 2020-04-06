@@ -1,24 +1,26 @@
 'use strict';
   	
-var	gulp           = require('gulp');
-var	sass           = require('gulp-sass');
-var	browserSync    = require('browser-sync');
-var	concat         = require('gulp-concat');
-var	uglify         = require('gulp-uglify');
-var	cleanCSS       = require('gulp-clean-css');
-var	rename         = require('gulp-rename');
-var	autoprefixer   = require('gulp-autoprefixer');
-var	notify         = require("gulp-notify");
-var	imagemin       = require('gulp-imagemin');
-var pngquant       = require('imagemin-pngquant');
-var cache          = require('gulp-cache');
-var	del            = require('del');
-var	svgstore	   = require('gulp-svgstore');
-var	svgmin		   = require('gulp-svgmin');
-var	path		   = require('path');
-var	posthtml	   = require('gulp-posthtml');
-var	include		   = require('posthtml-include');
-var	cheerio 	   = require('gulp-cheerio');
+var	gulp        	= require('gulp');
+var	sass        	= require('gulp-sass');
+var	browserSync		= require('browser-sync');
+var	concat      	= require('gulp-concat');
+var	uglify      	= require('gulp-uglify');
+var	cleanCSS    	= require('gulp-clean-css');
+var	rename      	= require('gulp-rename');
+var	autoprefixer	= require('gulp-autoprefixer');
+var	notify      	= require("gulp-notify");
+var	imagemin    	= require('gulp-imagemin');
+var pngquant    	= require('imagemin-pngquant');
+var cache       	= require('gulp-cache');
+var	del         	= require('del');
+var	svgstore		= require('gulp-svgstore');
+var	svgmin			= require('gulp-svgmin');
+var	path			= require('path');
+var	posthtml		= require('gulp-posthtml');
+var	include			= require('posthtml-include');
+var	cheerio 		= require('gulp-cheerio');
+var htmlmin 		= require('gulp-htmlmin');
+var webp 			= require('gulp-webp');
 
 // Включение browser-sync
 gulp.task('browser-sync', function() {
@@ -32,30 +34,32 @@ gulp.task('browser-sync', function() {
 
 // Конвертация SCSS в CSS
 gulp.task('sass', function() {
-	return gulp.src('source/sass/**/*.scss') // Путь к файлам SCSS
+	return gulp.src('source/sass/**/*.scss') // Берем все .scss файлы в данной папке
 	.pipe(sass({outputStyle: 'expanded'}).on("error", notify.onError()))
-	.pipe(autoprefixer(['last 2 versions'])) // Автопрефиксер
-	.pipe(gulp.dest('build/css/')) // Куда класть стандартный файл CSS
+	.pipe(autoprefixer(['last 2 versions'])) // Расставляем префиксы к свойствам
+	.pipe(gulp.dest('build/css/')) // Кладем в папку сборки
 	.pipe(rename({suffix: '.min', prefix : ''})) // Добавляем префикс к файлу
 	.pipe(cleanCSS()) // Минифицируем файл
-	.pipe(gulp.dest('build/css/')) // Куда класть минифицированный файл CSS
+	.pipe(gulp.dest('build/css/')) // Кладем минифицированный .css файл в папку сборки
 	.pipe(browserSync.reload({stream: true})); // Обновляем страницу
 });
 
 // Обработка изображений
 gulp.task('img', function() {
-  return gulp.src('source/img/**/*') // Путь к папке с изображениями
+  return gulp.src('source/img/**/*') // Берем все файлы из папки img
 	.pipe(cache(imagemin({
 		interlaced: true,
 		progressive: true,
 		svgoPlugins: [{removeViewBox: false}],
 		use: [pngquant()]
 	})))
-	.pipe(gulp.dest('build/img')) // Куда кладем обработанные изображения
-	.pipe(browserSync.reload({stream: true}));
+	.pipe(gulp.dest('build/img')) // Кладем обработанные изображения в папку сборки
+	.pipe(webp()) // Создаем webp версии всех .png, .jpg, .tiff изображений
+	.pipe(gulp.dest('build/img')) // Кладем webp версии изображений в папку сборки
+	.pipe(browserSync.reload({stream: true})); // Обновляем страницу
 });
 
-// Объединяем библиотеки к основному .js-файлу
+// Объединяем файлы js
 gulp.task('concat', function(cb) {
 	return gulp.src([
 		'source/libs/jquery/jquery-3.4.1.min.js',
@@ -73,14 +77,14 @@ gulp.task('clean', function () {
 	return del ('build'); // Удаляем всю папку со сборкой
 });
 
-// Перенос всех нужных файлов в папку сборки
+// Перенос файлов в папку сборки
 gulp.task('copy', function() {
 	return gulp.src([
 		'source/fonts/**/*.{woff,woff2}' // Все файлы шрифтов
     ], {
 		base: 'source' // Указываем исходную папку, для того чтобы весь путь к файлу не затерся
     })
-    .pipe(gulp.dest('build'));
+    .pipe(gulp.dest('build')); // Кладем в папку сборки
 });
 
 // Обновление html-файлов
@@ -125,22 +129,20 @@ gulp.task('sprite', function () {
         .pipe(gulp.dest('build/img/')); // Кладем в папку сборки
 });
 
-// Вставляем svg спрайт в html файлы
+// Обрабртка .html файлов
 gulp.task('posthtml', function () {
 	return gulp.src('source/*.html') // Берем все файлы .html в папке исходников
 		.pipe(posthtml([
 			include() // Вставляем вместо тега <include> содержимое указзанное в атрибуте src тега <include> (svg спрайт)
 		]))
+		.pipe(htmlmin({ collapseWhitespace: true })) // Минифицируем все .html файлы
 		.pipe(gulp.dest('build')); // Кладем в папку сборки
 });
 
 
 // Отслеживаем за изменениями
 gulp.task('watch', function(cb) {
-	gulp.parallel(
-
-		'browser-sync'
-	)(cb);
+	gulp.parallel('browser-sync')(cb); // Запускаем browser-sync
 	gulp.watch('source/sass/**/*.scss', gulp.series('sass')); // При сохранении любого .scss файла выполнить таск 'sass'
 	gulp.watch(['source/libs/**/*.js', 'source/js/*.js'], gulp.series('js')); // При сохранении любого .js файла выполнить таск 'js'
 	gulp.watch('source/**/*.html', gulp.series('posthtml')); // При сохранении любого .html файла выполнить таск 'posthtml'
@@ -153,10 +155,10 @@ gulp.task('build', gulp.series(
 	'clean', // Очищаем папку сборки
 	'img', // Обработка изображении и помещение их в папку сборки
 	'copy', // Копируем файлы ненуждающиеся в обработке
-	'sass', // Конвертируем SCSS в CSS и помещаем их в папку сборки
+	'sass', // Конвертируем SCSS в CSS, расставляем префиксы, минифицируем и кладем их в папку сборки
 	'js', // Минифицируем все js файлы и помещаем их в папку сборки
 	'sprite', // Собираем svg sprite
-	'posthtml', // Вставлем svg спрайт в разметку
+	'posthtml', // Минифицируем все .html файлы, вставлем svg спрайт в разметку
 	// 'html',  Перемещаем файлы HTML в папку сборки
 	function(cb) {
     cb();

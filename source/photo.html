@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="fonts/PTSans-Regular.woff2" as="font">
+    <link rel="preload" href="fonts/PTSans-Bold.woff2" as="font">
     <link rel="stylesheet" href="css/main.min.css">
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
     <title>Sedona</title>
+    <link href="img/favicon.ico" rel="icon" type="image/x-icon" />
+    <meta name="description" content="Отдых в Седона. Тихий и уютный городок в центре Аризоны.">
 </head>
 <body class="page-body">
     
@@ -20,11 +23,11 @@
                     <ul class="main-menu__list">
                         <li class="main-menu__item">
                             <a class="main-menu__link" href="index.html">Главная</a>
-                            <button class="btn main-menu__btn main-menu__btn--close"></button>
+                            <button class="btn main-menu__btn main-menu__btn--close"><span class="visually-hidden">Закрыть меню</span></button>
                         </li>
                         <li class="main-menu__item"><a class="main-menu__link main-menu__link--active">Фото и видео</a></li>
                         <li class="main-menu__item"><a class="main-menu__link" href="form.html">Форма отзыва</a></li>
-                        <li class="main-menu__item"><a class="main-menu__link" href="#">HTML Academy</a></li>
+                        <li class="main-menu__item"><a class="main-menu__link" href="#" target="_blank" rel="noopener">HTML Academy</a></li>
                     </ul>
                     <a class="main-menu__link main-menu__link--logo" href="index.html">
                         <picture>
@@ -33,7 +36,7 @@
                                 <img src="img/logo-mobile.svg" height="102" width="83" alt="На главную">
                         </picture>
                     </a>
-                    <button class="btn main-menu__btn main-menu__btn--open"></button>
+                    <button class="btn main-menu__btn main-menu__btn--open"><span class="visually-hidden">Открыть меню</span></button>
                 </nav>
             </section>
         </header>
@@ -61,7 +64,9 @@
                     <a href="#" class="photo__link">
                         <picture>
                             <source>
+                                <source media="(min-width: 1200px)" srcset="img/photo-1-desktop@1x.webp" type="image/webp">
                                 <source media="(min-width: 1200px)" srcset="img/photo-1-desktop@1x.jpg">
+                                <source media="(min-width: 768px)" srcset="img/photo-1-tablet@1x.webp" type="image/webp">
                                 <source media="(min-width: 768px)" srcset="img/photo-1-tablet@1x.jpg">
                                 <img class="photo__img" src="img/photo-1-mobile@1x.jpg" alt="Живописная дорога пролегающая в данной местности">
                         </picture>
@@ -85,7 +90,9 @@
                     <a href="#" class="photo__link">
                         <picture>
                             <source>
+                                <source media="(min-width: 1200px)" srcset="img/photo-2-desktop@1x.webp" type="image/webp">
                                 <source media="(min-width: 1200px)" srcset="img/photo-2-desktop@1x.jpg">
+                                <source media="(min-width: 768px)" srcset="img/photo-2-tablet@1x.webp" type="image/webp">
                                 <source media="(min-width: 768px)" srcset="img/photo-2-tablet@1x.jpg">
                                 <img class="photo__img" src="img/photo-2-mobile@1x.jpg" alt="Цветущий кактус произрастающий в долине">
                         </picture>
@@ -109,7 +116,9 @@
                     <a href="#" class="photo__link">
                         <picture>
                             <source>
+                                <source media="(min-width: 1200px)" srcset="img/photo-3-desktop@1x.webp" type="image/webp">
                                 <source media="(min-width: 1200px)" srcset="img/photo-3-desktop@1x.jpg">
+                                <source media="(min-width: 768px)" srcset="img/photo-3-tablet@1x.webp" type="image/webp">
                                 <source media="(min-width: 768px)" srcset="img/photo-3-tablet@1x.jpg">
                                 <img class="photo__img" src="img/photo-3-mobile@1x.jpg" alt="Дорога видущая в северную часть долины">
                         </picture>
@@ -133,7 +142,9 @@
                     <a href="#" class="photo__link">
                         <picture>
                             <source>
+                                <source media="(min-width: 1200px)" srcset="img/photo-4-desktop@1x.webp" type="image/webp">
                                 <source media="(min-width: 1200px)" srcset="img/photo-4-desktop@1x.jpg">
+                                <source media="(min-width: 768px)" srcset="img/photo-4-tablet@1x.webp" type="image/webp">
                                 <source media="(min-width: 768px)" srcset="img/photo-4-tablet@1x.jpg">
                                 <img class="photo__img" src="img/photo-4-mobile@1x.jpg" alt="Естесственный каменный мост созданный самой природой">
                         </picture>
@@ -165,7 +176,9 @@
                     <a class="video__link" href="#">
                         <picture>
                             <source>
+                                <source media="(min-width: 1200px)" srcset="img/video-desktop@1x.webp" type="image/webp">
                                 <source media="(min-width: 1200px)" srcset="img/video-desktop@1x.jpg">
+                                <source media="(min-width: 768px)" srcset="img/video-tablet@1x.webp" type="image/webp">
                                 <source media="(min-width: 768px)" srcset="img/video-tablet@1x.jpg">
                                 <img class="video__img" src="img/video-mobile@1x.jpg" alt="Просмотр видеопрезентации Седона">
                         </picture>
@@ -175,19 +188,19 @@
 
                         <button class="controls__button btn">
                             <svg class="controls__icon" width="16" height="20">
-                                <use xlink:href="#icon__replay"></use>
+                                <use xlink:href="#icon-replay"></use>
                             </svg>
                         </button>
 
                         <button class="controls__button btn">
                             <svg class="controls__icon" width="32" height="20">
-                                <use xlink:href="#icon__subtitles"></use>
+                                <use xlink:href="#icon-subtitles"></use>
                             </svg>
                         </button>
 
                         <button class="controls__button btn">
                             <svg class="controls__icon" width="20" height="20">
-                                <use xlink:href="#icon__fullscreen"></use>
+                                <use xlink:href="#icon-fullscreen"></use>
                             </svg>
                         </button>
                     </div>
@@ -202,11 +215,11 @@
                 <span>#Visitsedona</span>
             </div>
             <div class="page-footer__socials socials">
-                <a href="#" class="socials__link socials__link--tw"></a>
-                <a href="#" class="socials__link socials__link--fb"></a>
-                <a href="#" class="socials__link socials__link--yt"></a>
+                <a href="#" class="socials__link socials__link--tw"><span class="visually-hidden">Открыть нашу страницу в Twitter</span></a>
+                <a href="#" class="socials__link socials__link--fb"><span class="visually-hidden">Открыть нашу страницу в Facebook</span></a>
+                <a href="#" class="socials__link socials__link--yt"><span class="visually-hidden">Открыть наш Youtube канал</span></a>
             </div>
-            <a class="page-footer__developer" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">
+            <a class="page-footer__developer" href="https://htmlacademy.ru/intensive/adaptive" target="_blank" rel="noopener">
                 <span>Разработано</span>
                     <svg class="page-footer__image" width="27" height="34">
                         <use xlink:href="#icon-htmlacademy"></use>
@@ -217,8 +230,6 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=067ef420-7a25-481f-8881-77f62cba9613&lang=ru_RU" type="text/javascript"></script>
-    <script src="js/yandexMap.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

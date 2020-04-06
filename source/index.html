@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="fonts/PTSans-Regular.woff2" as="font">
+    <link rel="preload" href="fonts/PTSans-Bold.woff2" as="font">
     <link rel="stylesheet" href="css/main.min.css">
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
     <title>Sedona</title>
+    <link href="img/favicon.ico" rel="icon" type="image/x-icon" />
+    <meta name="description" content="Отдых в Седона. Тихий и уютный городок в центре Аризоны.">
 </head>
 <body class="page-body">
 
@@ -20,11 +23,11 @@
                     <ul class="main-menu__list">
                         <li class="main-menu__item">
                             <a class="main-menu__link main-menu__link--active">Главная</a>
-                            <button class="btn main-menu__btn main-menu__btn--close"></button>
+                            <button class="btn main-menu__btn main-menu__btn--close"><span class="visually-hidden">Закрыть меню</span></button>
                         </li>
                         <li class="main-menu__item"><a class="main-menu__link" href="photo.html">Фото и видео</a></li>
                         <li class="main-menu__item"><a class="main-menu__link" href="form.html">Форма отзыва</a></li>
-                        <li class="main-menu__item"><a class="main-menu__link" href="#">HTML Academy</a></li>
+                        <li class="main-menu__item"><a class="main-menu__link" href="#" target="_blank" rel="noopener">HTML Academy</a></li>
                     </ul>
                     <a class="main-menu__link main-menu__link--logo">
                         <picture>
@@ -33,7 +36,7 @@
                                 <img src="img/logo-mobile.svg" height="102" width="83" alt="На главную">
                         </picture>
                     </a>
-                    <button class="btn main-menu__btn main-menu__btn--open"></button>
+                    <button class="btn main-menu__btn main-menu__btn--open"><span class="visually-hidden">Открыть меню</span></button>
                 </nav>
             </section>
         </header>
@@ -70,9 +73,11 @@
 
                     <div class="reasons__card reasons__card--double">
                         <picture>
+                            <source media="(min-width: 1200px)" srcset="img/photo-city-desktop@1x.webp 1x, img/photo-city-desktop@2x.webp 2x" type="image/webp">
                             <source media="(min-width: 1200px)" srcset="img/photo-city-desktop@1x.jpg 1x, img/photo-city-desktop@2x.jpg 2x">
-                            <source media="(min-width: 421px)" srcset="img/photo-city-tablet@1x.jpg 1x, img/photo-city-tablet@2x.jpg 2x">
-                            <img class="reasons__image" src="img/photo-city-mobile@1x.jpg" srcset="img/photo-city-mobile@2x.jpg 2x" alt="Жилье в Седоне">
+                            <source media="(min-width: 512px)" srcset="img/photo-city-tablet@1x.webp 1x, img/photo-city-tablet@2x.webp 2x" type="image/webp">
+                            <source media="(min-width: 512px)" srcset="img/photo-city-tablet@1x.jpg 1x, img/photo-city-tablet@2x.jpg 2x">
+                            <img class="reasons__image" src="img/photo-city-mobile@1x.jpg" srcset="img/photo-city-mobile@2x.jpg 2x" alt="Жилье в Седоне" loading="lazy">
                         </picture>
                     </div>
 
@@ -118,9 +123,11 @@
 
                     <div class="reasons__card reasons__card--double">
                         <picture>
+                            <source media="(min-width: 1200px)" srcset="img/photo-bridge-desktop@1x.webp 1x, img/photo-bridge-desktop@2x.webp 2x" type="image/webp">
                             <source media="(min-width: 1200px)" srcset="img/photo-bridge-desktop@1x.jpg 1x, img/photo-bridge-desktop@2x.jpg 2x">
-                            <source media="(min-width: 321px)" srcset="img/photo-bridge-tablet@1x.jpg 1x, img/photo-bridge-tablet@2x.jpg 2x">
-                            <img class="reasons__image" src="img/photo-bridge-mobile@1x.jpg" srcset="img/photo-bridge-mobile@2x.jpg 2x" alt="Пейзажи Седоны">
+                            <source media="(min-width: 512px)" srcset="img/photo-bridge-tablet@1x.webp 1x, img/photo-bridge-tablet@2x.webp 2x" type="image/webp">
+                            <source media="(min-width: 512px)" srcset="img/photo-bridge-tablet@1x.jpg 1x, img/photo-bridge-tablet@2x.jpg 2x">
+                            <img class="reasons__image" src="img/photo-bridge-mobile@1x.jpg" srcset="img/photo-bridge-mobile@2x.jpg 2x" alt="Пейзажи Седоны" loading="lazy">
                         </picture>
                     </div>
 
@@ -167,8 +174,7 @@
             </section>
 
             <section class="map" id="map">
-                <!-- <img class="map__image" src="https://via.placeholder.com/320x350" height="320" width="350" alt="Мы расположены здесь"> -->
-                
+
             </section>
         </main>
 
@@ -177,11 +183,11 @@
                 <span>#Visitsedona</span>
             </div>
             <div class="page-footer__socials socials">
-                <a href="#" class="socials__link socials__link--tw"></a>
-                <a href="#" class="socials__link socials__link--fb"></a>
-                <a href="#" class="socials__link socials__link--yt"></a>
+                <a href="#" class="socials__link socials__link--tw"><span class="visually-hidden">Открыть нашу страницу в Twitter</span></a>
+                <a href="#" class="socials__link socials__link--fb"><span class="visually-hidden">Открыть нашу страницу в Facebook</span></a>
+                <a href="#" class="socials__link socials__link--yt"><span class="visually-hidden">Открыть наш Youtube канал</span></a>
             </div>
-            <a class="page-footer__developer" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">
+            <a class="page-footer__developer" href="https://htmlacademy.ru/intensive/adaptive" target="_blank" rel="noopener">
                 <span>Разработано</span>
                     <svg class="page-footer__image" width="27" height="34">
                         <use xlink:href="#icon-htmlacademy"></use>
